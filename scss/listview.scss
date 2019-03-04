@@ -4,15 +4,60 @@
 
   height: 100%;
   width: 100%;
-  background: $Accent;
+  background: $ThirdDark;
   display: grid;
   grid-template-columns: 1fr;
+  grid-row-gap: .5rem;
 
-  .request {
+  .request-wrap {
 
-    display: grid;
-    grid-template-columns: .05fr .15fr 1fr;
-    height: 2rem;
+      margin: 2rem;
+      background: $SecDark;
+      padding: 2rem 6rem 2rem 6rem;
+
+      .request {
+
+        display: grid;
+        grid-template-columns: .05fr .1fr 1fr;
+        height: 2rem;
+        grid-column-gap: .25rem;
+        color: $Text;
+
+        div:not(.request-checkmark) {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: .25rem;
+          background: $Accent;
+          @include UnderThin();
+          font-size: 0.8rem;
+          margin-bottom: .25rem;
+        }
+
+        .request-checkmark {
+          width: 2rem;
+          height: 2rem;
+          background-image: url("../img/round-check_box_outline_blank-24px.svg");
+          background-size: 100% 100%;
+          filter: invert(1);
+          transition: background-image 50ms ease-in;
+
+          &:hover {
+            background-image: url("../img/round-check_box-24px.svg");
+            background-size: 100% 100%;
+            filter: invert(1);
+          }
+        }
+
+        .request-username-wrap {
+          border-radius: .15rem;
+        }
+
+        .request-text-wrap {
+          border-radius: .15rem;
+        }
+
+      }
 
   }
 

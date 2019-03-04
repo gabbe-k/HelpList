@@ -1,0 +1,41 @@
+.header-outer-wrap {
+  height: 2.5rem;
+}
+.main-outer-wrap {
+  height: 20rem;
+  padding: 2rem;
+  background: #212121;
+}
+
+.footer-outer-wrap {
+  height: 2.5rem;
+}
+
+.listview-wrap {
+  height: 100%;
+  width: 100%;
+  background: #ba1a52;
+}
+
+html {
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  background: #101638;
+}
+
+.content-wrap div:nth-child(even) {
+  background: #212121;
+}
+
+/*# sourceMappingURL=master.css.map */

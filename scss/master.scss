@@ -1,0 +1,26 @@
+@import "misc";
+@import "header";
+@import "main";
+@import "footer";
+@import "listview";
+
+html {
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  background: $SecDark;
+}
+
+.content-wrap div:nth-child(even) {
+  background: $PrimText;
+}

@@ -15,6 +15,13 @@
   height: 100%;
   width: 100%;
   background: #ba1a52;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.listview-wrap .request {
+  display: grid;
+  grid-template-columns: 0.05fr 0.15fr 1fr;
+  height: 2rem;
 }
 
 html {

@@ -87,14 +87,60 @@
   background: #172353;
   font-weight: lighter;
 }
-.listview-wrap .request-wrap .request-form-wrap {
-  display: grid;
+.listview-wrap .request-wrap .request-formsection-outer-wrap {
   height: 2rem;
-  border-radius: 0.15rem;
-  background: #172353;
-  grid-column-gap: 0.25rem;
-  margin-left: 0.25rem;
 }
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap {
+  width: 100%;
+  height: 100%;
+  background: #212121;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form {
+  width: 100%;
+  height: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=text] {
+  width: 10rem !important;
+  height: 1.5rem !important;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
+  width: 2rem !important;
+  height: 1.5rem !important;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=text] {
+  background: #EDEDED;
+  border: none;
+  outline: none;
+  color: #aaaaaa;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.15rem;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: margin-top 0.05s ease-out;
+  transition: 0.075s 0.05s ease-out;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit]:focus {
+  border: none;
+  outline: none;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit]:active {
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0);
+}
+
 html {
   font-size: 24px;
 }

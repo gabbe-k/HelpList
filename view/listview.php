@@ -43,6 +43,20 @@
       </div>
     </div>
 
+    <div class="request-form-wrap">
+      <div class="request-form-inner-wrap">
+        <div class="request-form-placeholder">
+          
+        </div>
+        <div class="request-form-wrap">
+          <form class="request-form" action="./php/func/post.php" method="post">
+            <input type="text" name="" placeholder="Input your help request here...">
+            <input type="submit" name="" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>

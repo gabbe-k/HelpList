@@ -58,5 +58,13 @@
   background: #172353;
   font-weight: lighter;
 }
+.listview-wrap .request-wrap .request-form-wrap {
+  display: grid;
+  height: 2rem;
+  border-radius: 0.15rem;
+  background: #172353;
+  grid-column-gap: 0.25rem;
+  margin-left: 0.25rem;
+}
 
 /*# sourceMappingURL=listview.css.map */

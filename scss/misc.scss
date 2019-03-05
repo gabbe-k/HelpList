@@ -60,6 +60,8 @@ $AccentDark : #d10049;
 
 }
 
+//mixins
+
 @mixin headerbtn() {
   @include buttonMix();
   box-shadow: 0 0.15rem 0 0rem rgba(0,0,0,.25);
@@ -76,4 +78,20 @@ $AccentDark : #d10049;
     transform: translateY(0.1rem);
   }
 
+}
+
+@mixin formMix {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0.15rem 0 0rem rgba(0,0,0,.25);
+
+    input {
+      width: 100%;
+      height: 100%;
+      background: $SecDark;
+      border: none;
+      outline: none;
+      color: $SecText;
+    }
 }

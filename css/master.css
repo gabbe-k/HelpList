@@ -120,6 +120,8 @@
   width: 100%;
   border-radius: 0.15rem;
   box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  margin: 0.25rem;
+  padding-left: 0.25rem;
 }
 .listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
   z-index: 999;

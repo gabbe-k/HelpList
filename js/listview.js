@@ -1,9 +1,23 @@
+function update() {
+
+  $.ajax({
+    url: '../php/print/prreq.php',
+    success:
+    function(data){
+    $('.request-wrap').html(data); //insert text of test.php into your div
+
+    },
+  });
+
+}
 
 $(document).ready(function() {
 
-  $('.listview-wrap').click(function(event) {
+  update();
 
-      var checkedElementArr = [];
+  var checkedElementArr = [];
+
+  $('.listview-wrap').click(function(event) {
 
       if ($(event.target).is('.request-checkmark')) {
 
@@ -11,16 +25,19 @@ $(document).ready(function() {
 
         if ($(checkmark).hasClass("isChecked")) {
 
+          var postId = $(checkmark).parent().next().children().val();
           $(checkmark).removeClass("animatable--now");
           $(checkmark).removeClass("isChecked");
+
           checkedElementArr = jQuery.grep(checkedElementArr, function(value) {
-            return value != checkmark;
+            return value != postId;
           });
 
         }
         else {
-
-          checkedElementArr.push(checkmark);
+          var postId = $(checkmark).parent().next().children().val();
+          console.log(postId);
+          checkedElementArr.push(postId);
           $(checkmark).addClass("animatable--now");
           $(checkmark).addClass("isChecked");
 
@@ -28,11 +45,17 @@ $(document).ready(function() {
 
       }
 
-      if ($(event.target).is('#request-form')) {
 
-        console.log(checkedElementArr[0]);
-        console.log(checkedElementArr[1]);
-        console.log(checkedElementArr[2]);
+
+      if ($(event.target).is('#remove-tags-button') && checkedElementArr.length > 0) {
+
+        $.post("../php/print/prremovepost.php",  {postIdArr: checkedElementArr}, function(output) {
+
+          console.log(output);
+          update();
+
+        });
+
       }
 
     });

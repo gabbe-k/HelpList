@@ -6,13 +6,17 @@
 		$reqText = strip_tags($_POST['reqText']);
 		$reqText = mysqli_real_escape_string($conn, $reqText);
 
-		$sql = "INSERT INTO requests (id, reqText, idTeachr) VALUES ('100', '$reqText', '100')";
-
 		if($reqText == ""){
 			echo "Please complete your post!";
 			return;
 		}
-		mysqli_query($conn,$sql);
+		else {
+			$stmt = $conn->prepare("INSERT INTO requests (id, postId, reqText, idTeachr) VALUES ('100', '25', (?), '100')");
+			$stmt->bind_param('s', $reqText);
+			$stmt->execute();
+			exit;
+		}
+
 
 		header("Location: ../../index.php");
 	}

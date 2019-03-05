@@ -16,6 +16,7 @@ INSERT INTO `users` (`id`, `email`, `uid`, `pwd`, `isTeachr`) VALUES ('100', 'bi
 
 CREATE TABLE Requests(
 	id int(10),
+		postId int(10),
     reqText text,
     idTeachr int(10)
 );

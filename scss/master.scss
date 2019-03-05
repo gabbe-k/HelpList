@@ -5,7 +5,7 @@
 @import "listview";
 
 html {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 * {
@@ -17,10 +17,7 @@ html {
 .content-wrap {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
+  min-height: 100vh;
+  max-height: auto;
   background: $SecDark;
-}
-
-.content-wrap div:nth-child(even) {
-  background: $PrimText;
 }

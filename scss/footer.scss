@@ -3,5 +3,7 @@
 .footer-outer-wrap {
 
   height: 2.5rem;
+  background: $PrimDark;
+  @include UnderThin;
 
 }

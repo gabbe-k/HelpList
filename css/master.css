@@ -1,31 +1,57 @@
 .header-outer-wrap {
   height: 2.5rem;
+  background: #303F9F;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.header-outer-wrap .header-inner-wrap {
+  color: white;
+  font-weight: 200;
+}
+
 .main-outer-wrap {
-  height: 20rem;
-  background: #212121;
+  height: 25rem;
+  width: 100%;
+  background: #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-outer-wrap {
   height: 2.5rem;
+  background: #303F9F;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
 }
 
 .listview-wrap {
-  height: 100%;
-  width: 100%;
-  background: #111111;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  height: 75%;
+  width: 75%;
+  background: #303F9F;
+}
+.listview-wrap .listview-info {
+  padding: 0.5rem;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+.listview-wrap .listview-info h1 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+.listview-wrap .request-wrap {
+  background: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.5rem;
-}
-.listview-wrap .request-wrap {
-  margin: 2rem;
-  background: #101638;
   padding: 2rem 6rem 2rem 6rem;
 }
 .listview-wrap .request-wrap .request {
   display: grid;
-  grid-template-columns: 0.05fr 0.1fr 1fr;
+  grid-template-columns: 0.025fr 0.1fr 1fr;
   height: 2rem;
   grid-column-gap: 0.25rem;
   color: #EDEDED;
@@ -34,8 +60,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.25rem;
-  background: #ba1a52;
+  padding: 0.4rem;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   font-size: 0.8rem;
 }
@@ -43,20 +68,24 @@
   width: 2rem;
   height: 2rem;
   background-image: url("../img/round-check_box_outline_blank-24px.svg");
-  background-size: 100% 100%;
-  filter: invert(1);
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: background-image 50ms ease-in;
+  filter: invert(1);
 }
 .listview-wrap .request-wrap .request .request-checkmark:hover {
   background-image: url("../img/round-check_box-24px.svg");
-  background-size: 100% 100%;
-  filter: invert(1);
 }
 .listview-wrap .request-wrap .request .request-username-wrap {
   border-radius: 0.15rem;
+  background: #212121;
+  font-weight: lighter;
 }
 .listview-wrap .request-wrap .request .request-text-wrap {
   border-radius: 0.15rem;
+  background: #172353;
+  font-weight: lighter;
 }
 
 html {
@@ -72,7 +101,6 @@ html {
 .content-wrap {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 100vh;
   max-height: auto;
   background: #101638;
 }

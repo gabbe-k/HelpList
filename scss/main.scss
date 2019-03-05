@@ -2,8 +2,11 @@
 
 .main-outer-wrap {
 
-  height: 20rem;
-
-  background: $PrimText;
+  height: 25rem;
+  width: 100%;
+  background: $TextDark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }

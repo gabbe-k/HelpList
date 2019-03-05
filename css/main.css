@@ -1,6 +1,10 @@
 .main-outer-wrap {
-  height: 20rem;
-  background: #212121;
+  height: 25rem;
+  width: 100%;
+  background: #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -12,6 +12,8 @@ CREATE TABLE Users(
     isTeachr int
 );
 
+INSERT INTO `users` (`id`, `email`, `uid`, `pwd`, `isTeachr`) VALUES ('100', 'bigman', 'bigman', 'bigman', '0');
+
 CREATE TABLE Requests(
 	id int(10),
     reqText text,

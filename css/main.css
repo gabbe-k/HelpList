@@ -1,3 +1,8 @@
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
 .main-outer-wrap {
   height: 25rem;
   width: 100%;

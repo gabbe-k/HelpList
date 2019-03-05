@@ -15,7 +15,7 @@
     <div class="request-formsection-outer-wrap">
         <div class="request-form-wrap">
           <form id="request-form" action="./php/func/post.php" method="post">
-            <input type="text" name="" placeholder="Input your help request here...">
+            <input type="text" name="reqText" placeholder="Input your help request here...">
             <input type="submit" name="" value="Submit">
           </form>
         </div>

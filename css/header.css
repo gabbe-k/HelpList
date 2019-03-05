@@ -1,3 +1,8 @@
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
 .header-outer-wrap {
   height: 2.5rem;
   background: #303F9F;

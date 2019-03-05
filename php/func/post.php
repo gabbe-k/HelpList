@@ -1,25 +1,20 @@
 <?php
 	session_start();
-	include_once("DataBase.php");
+  include("../../Inc/dbh.inc.php");
 	//sätter upp det som ska skrivas på sidan
-	if(isset($_POST['post'])){
-		$title = strip_tags($_POST['title']);
-		$content = strip_tags($_POST['content']);
+	if(isset($_POST['reqText'])){
+		$reqText = strip_tags($_POST['reqText']);
+		$reqText = mysqli_real_escape_string($conn, $reqText);
 
-		$title = mysqli_real_escape_string($DataBase, $title);
-		$content = mysqli_real_escape_string($DataBase, $content);
+		$sql = "INSERT INTO requests (id, reqText, idTeachr) VALUES ('100', '$reqText', '100')";
 
-		$date = date('l jS \of F Y h:i:s A');
-
-		$sql = "INSERT into posts (title, content, date) VALUES ('$title', '$content', '$date')";
-
-		if($title == "" || $content == ""){
+		if($reqText == ""){
 			echo "Please complete your post!";
 			return;
 		}
-		mysqli_query($DataBase,$sql);
+		mysqli_query($conn,$sql);
 
-		header("Location: index.php");
+		header("Location: ../../index.php");
 	}
 ?>
 

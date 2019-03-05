@@ -18,6 +18,10 @@ $Darkest : #0c0c0c;
 $Accent : #ba1a52;
 $AccentDark : #d10049;
 
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 //Shadows
 
 @mixin UnderThick {

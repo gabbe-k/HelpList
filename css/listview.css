@@ -1,3 +1,7 @@
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 p {
   color: white;
   font-size: 0.8rem;
@@ -47,11 +51,10 @@ p {
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-image 50ms ease-in;
   filter: invert(1);
 }
-.listview-wrap .request-wrap .request .request-checkmark:hover {
-  background-image: url("../img/round-check_box-24px.svg");
+.listview-wrap .request-wrap .request .isChecked {
+  background-image: url("../img/round-check_box-24px.svg") !important;
 }
 .listview-wrap .request-wrap .request .request-username-wrap {
   border-radius: 0.15rem;

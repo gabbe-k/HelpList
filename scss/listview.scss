@@ -51,12 +51,11 @@
           background-size: 85%;
           background-repeat: no-repeat;
           background-position: center;
-          transition: background-image 50ms ease-in;
           filter: invert(1);
+        }
 
-          &:hover {
-            background-image: url("../img/round-check_box-24px.svg");
-          }
+        .isChecked {
+          background-image: url("../img/round-check_box-24px.svg") !important;
         }
 
         .request-username-wrap {

@@ -1,3 +1,5 @@
+<script src="../js/listview.js"></script>
+
 <div class="listview-wrap">
 
   <div class="listview-info-wrap">

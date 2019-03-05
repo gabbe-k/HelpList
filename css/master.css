@@ -1,6 +1,14 @@
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 p {
   color: white;
   font-size: 0.8rem;
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
 }
 
 p {
@@ -22,6 +30,10 @@ p {
   font-weight: 200;
 }
 
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 p {
   color: white;
   font-size: 0.8rem;
@@ -36,6 +48,10 @@ p {
   justify-content: center;
 }
 
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 p {
   color: white;
   font-size: 0.8rem;
@@ -45,6 +61,10 @@ p {
   height: 2.5rem;
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
 }
 
 p {
@@ -96,11 +116,10 @@ p {
   background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
-  transition: background-image 50ms ease-in;
   filter: invert(1);
 }
-.listview-wrap .request-wrap .request .request-checkmark:hover {
-  background-image: url("../img/round-check_box-24px.svg");
+.listview-wrap .request-wrap .request .isChecked {
+  background-image: url("../img/round-check_box-24px.svg") !important;
 }
 .listview-wrap .request-wrap .request .request-username-wrap {
   border-radius: 0.15rem;

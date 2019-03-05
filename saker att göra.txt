@@ -1,0 +1,8 @@
+Databas / Printa ut inlägg - Gabbe
+Ta bort inlägg - Gabbe - Javascript
+Lista där man kan välja mellan lärare - Albin
+
+
+
+
+Finns flera lärare - i requestdatabasen har requestsen ett lärar id - man kan gå in på flera olika lärares sidor

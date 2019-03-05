@@ -1,3 +1,10 @@
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
 
+p {
+  color: white;
+  font-size: 0.8rem;
+}
 
 /*# sourceMappingURL=misc.css.map */

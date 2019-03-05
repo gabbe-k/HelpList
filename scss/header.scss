@@ -2,10 +2,16 @@
 
 .header-outer-wrap {
 
-  height: 2.5rem;
+  background: $PrimDark;
+  @include UnderThin();
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .header-inner-wrap {
-
+    color: white;
+    font-weight: 200;
   }
 
 }

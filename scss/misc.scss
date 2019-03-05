@@ -18,6 +18,10 @@ $Darkest : #0c0c0c;
 $Accent : #ba1a52;
 $AccentDark : #d10049;
 
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
 //Shadows
 
 @mixin UnderThick {
@@ -60,6 +64,8 @@ $AccentDark : #d10049;
 
 }
 
+//mixins
+
 @mixin headerbtn() {
   @include buttonMix();
   box-shadow: 0 0.15rem 0 0rem rgba(0,0,0,.25);
@@ -76,4 +82,38 @@ $AccentDark : #d10049;
     transform: translateY(0.1rem);
   }
 
+}
+
+@mixin formMix {
+
+    width: 100%;
+    height: 100%;
+
+    input[type=text] {
+      background: $Text;
+      border: none;
+      outline: none;
+      color: $SecText;
+      height: 100%;
+      width: 100%;
+      border-radius: .15rem;
+      box-shadow: 0 0.25rem 0 -.1rem rgba(0,0,0,.2);
+      margin: .25rem;
+      margin-right: 0 !important;
+      padding-left: .25rem;
+    }
+
+    input[type=submit] {
+      @include buttonMix();
+      height: 100%;
+      width: 100%;
+      border-radius: .15rem;
+    }
+}
+
+//font-size
+
+p {
+  color: white;
+  font-size: 0.8rem;
 }

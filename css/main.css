@@ -1,6 +1,18 @@
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
 .main-outer-wrap {
-  height: 20rem;
-  background: #212121;
+  width: 100%;
+  background: #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,31 +1,99 @@
-.header-outer-wrap {
-  height: 2.5rem;
+.animatable--now {
+  transition: all 50ms ease-out !important;
 }
+
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.header-outer-wrap {
+  background: #303F9F;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-outer-wrap .header-inner-wrap {
+  color: white;
+  font-weight: 200;
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
+}
+
 .main-outer-wrap {
-  height: 20rem;
-  background: #212121;
+  width: 100%;
+  background: #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
 }
 
 .footer-outer-wrap {
-  height: 2.5rem;
+  background: #303F9F;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+
+.animatable--now {
+  transition: all 50ms ease-out !important;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
 }
 
 .listview-wrap {
-  height: 100%;
-  width: 100%;
-  background: #111111;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  height: 75%;
+  width: 75%;
+  background: #303F9F;
+}
+.listview-wrap .listview-info {
+  padding: 0.5rem;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+.listview-wrap .listview-info h1 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+.listview-wrap .request-wrap {
+  background: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.5rem;
-}
-.listview-wrap .request-wrap {
-  margin: 2rem;
-  background: #101638;
   padding: 2rem 6rem 2rem 6rem;
 }
 .listview-wrap .request-wrap .request {
   display: grid;
-  grid-template-columns: 0.05fr 0.1fr 1fr;
+  grid-template-columns: 0.025fr 0.1fr 1fr;
   height: 2rem;
   grid-column-gap: 0.25rem;
   color: #EDEDED;
@@ -34,8 +102,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.25rem;
-  background: #ba1a52;
+  padding: 0.4rem;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   font-size: 0.8rem;
 }
@@ -43,20 +110,79 @@
   width: 2rem;
   height: 2rem;
   background-image: url("../img/round-check_box_outline_blank-24px.svg");
-  background-size: 100% 100%;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
   filter: invert(1);
-  transition: background-image 50ms ease-in;
 }
-.listview-wrap .request-wrap .request .request-checkmark:hover {
-  background-image: url("../img/round-check_box-24px.svg");
-  background-size: 100% 100%;
-  filter: invert(1);
+.listview-wrap .request-wrap .request .isChecked {
+  background-image: url("../img/round-check_box-24px.svg") !important;
 }
 .listview-wrap .request-wrap .request .request-username-wrap {
   border-radius: 0.15rem;
+  background: #212121;
+  font-weight: lighter;
 }
 .listview-wrap .request-wrap .request .request-text-wrap {
   border-radius: 0.15rem;
+  background: #172353;
+  font-weight: lighter;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap {
+  height: 2rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap {
+  width: 100%;
+  height: 100%;
+  background: #212121;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form {
+  width: 100%;
+  height: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=text] {
+  width: 10rem !important;
+  height: 1.5rem !important;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
+  width: 2rem !important;
+  height: 1.5rem !important;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=text] {
+  background: #EDEDED;
+  border: none;
+  outline: none;
+  color: #aaaaaa;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.15rem;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  margin: 0.25rem;
+  margin-right: 0 !important;
+  padding-left: 0.25rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: margin-top 0.05s ease-out;
+  transition: 0.075s 0.05s ease-out;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit]:focus {
+  border: none;
+  outline: none;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit]:active {
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0);
 }
 
 html {
@@ -72,6 +198,7 @@ html {
 .content-wrap {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 0.15fr 1fr 0.15fr;
   min-height: 100vh;
   max-height: auto;
   background: #101638;

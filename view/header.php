@@ -1,3 +1,3 @@
 <div class="header-inner-wrap">
-  <h2>Header</h2>
+  <h2>Need help?</h2>
 </div>

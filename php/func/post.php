@@ -33,8 +33,8 @@
 	<body>
 		<div class="LoginPage">
 		<form action="post.php" method="post" enctype="multipart/form-data">
-			<input type="text" name="title" placeholder="Title" autofocus size="48"><br /><br />
-			<textarea placeholder="Content" name="content" rows="20" cols="50"></textarea><br />
+			<input type="text" name="title" placeholder="Title" autofocus size="48"><br/><br/>
+			<textarea placeholder="Content" name="content" rows="20" cols="50"></textarea><br/>
 			<input name="post" type="submit" value="Post">
 		</form>
 	</div>

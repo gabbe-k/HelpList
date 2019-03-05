@@ -17,6 +17,8 @@ html {
 .content-wrap {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 0.15fr 1fr .15fr;
+  min-height: 100vh;
   max-height: auto;
   background: $SecDark;
 }

@@ -9,27 +9,27 @@ if (isset($_POST['signup-submit'])){
 
   //error messages   Using # for replacement
   if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
-    header("Location: ../#?error=emptyfields&uid".$username || "&mail=".$email);
+    header("Location: ../signup.php?error=emptyfields&uid".$username || "&mail=".$email);
     exit();
   }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/" || $username)){
-    header("Location: ../#?error=invalidmailuid");
+    header("Location: ../signup.php?error=invalidmailuid");
     exit();
   }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    header("LOCATION: ../#?error=invalidmai&uid=".$username);
+    header("LOCATION: ../signup.php?error=invalidmai&uid=".$username);
     exit();
   }elseif(!preg_match("/^[a-zA-Z0-9]*$/",$username)){
-    header("Location: ../#?error=invaliduid&mail=".$email);
+    header("Location: ../signup.php?error=invaliduid&mail=".$email);
     exit();
   }elseif($password !== $passwordRepeat){
-    header("Location: ../#?error=passwordcheck&uid=".$username || "&mail=".$email);
+    header("Location: ../signup.php?error=passwordcheck&uid=".$username || "&mail=".$email);
     exit();
     }
     // Does the username alreaddy exist?
     else {
-      $sql = "SELECT * FROM # WHERE uidUsers=?;";
+      $sql = "SELECT * FROM users WHERE uidUsers=?;";
       $stmt =mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)){
-        header("Location: ../#?error=sqlerror");
+        header("Location: ../signup.php?error=sqlerror");
         exit();
       }else{
         mysqli_stmt_bin_param($stmt, "s", $mailuid);
@@ -37,13 +37,13 @@ if (isset($_POST['signup-submit'])){
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);
         if ($resultCheck > 0){
-          header("Location: ../#?error=usertaken&mail=".$email);
+          header("Location: ../signup.php?error=usertaken&mail=".$email);
           exit();
         }else{
-          $sql "INSERT INTO # (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
+          $sql "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../#?error=sqlerror");
+            header("Location: ../signup.php?error=sqlerror");
             exit();
           }else{
             // Hash password
@@ -51,7 +51,7 @@ if (isset($_POST['signup-submit'])){
 
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedpwd);
             mysqli_stmt_execute($stmt);
-            $sql = "SELECT idUsers FROM # WHERE uidUsers=$username";
+            $sql = "SELECT idUsers FROM users WHERE uidUsers=$username";
             mysqli_stmt_store_result($row);
             mysqli_stmt_prepare($stmt, $sql);
             mysqli_stmt_execute($stmt);
@@ -65,7 +65,7 @@ if (isset($_POST['signup-submit'])){
       }
     }
   }else{
-    header("Location: ../#");
+    header("Location: ../signup.php");
     exit();
   }
 ?>

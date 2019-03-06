@@ -9,8 +9,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  overflow: "overlay";
-  width: 0.2rem;
+  width: 0.5rem;
   scroll-behavior: smooth;
 }
 

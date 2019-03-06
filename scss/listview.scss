@@ -7,26 +7,39 @@
   height: 100%;
   width: 100%;
   background: $PrimDark;
+  display: grid;
+  grid-template-columns: .3fr 1fr .3fr;
 
-  .listview-info {
-    padding: .5rem;
+  .listview-info-wrap {
 
-    h1 {
-      color: white;
-      text-align: center;
-      font-weight: 400;
+    grid-column: 1/6;
+    grid-row: 1;
+
+    .listview-info {
+      padding: .5rem;
+
+      h1 {
+        color: white;
+        text-align: center;
+        font-weight: 400;
+      }
+
+      @include UnderThin;
     }
 
-    @include UnderThin;
   }
 
   .request-wrap {
+
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
 
       background: none;
       display: grid;
       grid-template-columns: 1fr;
       grid-row-gap: .5rem;
-      padding: 2rem 6rem 2rem 6rem;
 
       p {
         margin-left: .25rem;
@@ -132,6 +145,60 @@
       border-bottom-right-radius: .25rem;
       background: $DeepRed;
       font-size: .75rem;
+    }
+
+  }
+
+  .listview-signup-wrap {
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+
+    .listview-signup-form-wrap {
+
+      width: 100%;
+      height: 100%;
+
+      form {
+
+        input[type=text], select {
+          width: 100%;
+          padding: .5rem;
+          margin: .25rem 0;
+          display: inline-block;
+          border: none;
+          border-radius: .1rem;
+          box-sizing: border-box;
+          @include UnderThin();
+        }
+
+        input[type=password], select {
+          width: 100%;
+          padding: .5rem;
+          margin: .25rem 0;
+          display: inline-block;
+          border: none;
+          border-radius: .1rem;
+          box-sizing: border-box;
+          @include UnderThin();
+        }
+
+        input[type=submit] {
+          margin: .25rem 0 !important;
+          @include headerbtn();
+          background: $PrimText;
+          width: 100% !important;
+          border-radius: .1rem;
+          @include UnderThin();
+        }
+
+        input[type=submit]:hover {
+          background-color: $ThirdDark;
+        }
+
+      }
+
     }
 
   }

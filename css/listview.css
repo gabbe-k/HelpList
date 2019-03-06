@@ -34,22 +34,31 @@ p {
   height: 100%;
   width: 100%;
   background: #303F9F;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.3fr;
 }
-.listview-wrap .listview-info {
+.listview-wrap .listview-info-wrap {
+  grid-column: 1/6;
+  grid-row: 1;
+}
+.listview-wrap .listview-info-wrap .listview-info {
   padding: 0.5rem;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
 }
-.listview-wrap .listview-info h1 {
+.listview-wrap .listview-info-wrap .listview-info h1 {
   color: white;
   text-align: center;
   font-weight: 400;
 }
 .listview-wrap .request-wrap {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   background: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.5rem;
-  padding: 2rem 6rem 2rem 6rem;
 }
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;
@@ -179,7 +188,7 @@ p {
   height: 1.5rem;
   padding: 0;
   border-bottom-right-radius: 0.25rem;
-  background: #b71c1c;
+  background: #ad0505;
   font-size: 0.75rem;
 }
 .listview-wrap .remove-tags-wrap #remove-tags-button:focus {
@@ -192,6 +201,71 @@ p {
 .listview-wrap .remove-tags-wrap #remove-tags-button:active {
   box-shadow: none !important;
   transform: translateY(0.1rem);
+}
+.listview-wrap .listview-signup-wrap {
+  width: 100%;
+  height: 100%;
+  display: grid;
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap {
+  width: 100%;
+  height: 100%;
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=text], .listview-wrap .listview-signup-wrap .listview-signup-form-wrap form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: none;
+  border-radius: 0.1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=password], .listview-wrap .listview-signup-wrap .listview-signup-form-wrap form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: none;
+  border-radius: 0.1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=submit] {
+  margin: 0.25rem 0 !important;
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: margin-top 0.05s ease-out;
+  transition: 0.075s 0.05s ease-out;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  background-color: #ba1a52;
+  color: #EDEDED;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 0.1rem;
+  border-bottom-right-radius: 0.5rem;
+  margin-top: 0rem;
+  background: #212121;
+  width: 100% !important;
+  border-radius: 0.1rem;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=submit]:focus {
+  border: none;
+  outline: none;
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=submit]:active {
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0);
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=submit]:active {
+  box-shadow: none !important;
+  transform: translateY(0.1rem);
+}
+.listview-wrap .listview-signup-wrap .listview-signup-form-wrap form input[type=submit]:hover {
+  background-color: #111111;
 }
 
 /*# sourceMappingURL=listview.css.map */

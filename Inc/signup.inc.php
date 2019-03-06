@@ -26,7 +26,7 @@ if (isset($_POST['signup-submit'])){
     }
     // Does the username alreaddy exist?
     else {
-      $sql = "SELECT * FROM users WHERE uidUsers=?;";
+      $sql = "SELECT * FROM users WHERE uid=?;";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: ../signup.php?error=sqlerror");
@@ -40,7 +40,7 @@ if (isset($_POST['signup-submit'])){
           header("Location: ../signup.php?error=usertaken&mail=".$email);
           exit();
         }else{
-          $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
+          $sql = "INSERT INTO users (uid, email, pwd) VALUES (?,?,?);";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../signup.php?error=sqlerror");
@@ -51,13 +51,13 @@ if (isset($_POST['signup-submit'])){
 
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedpwd);
             mysqli_stmt_execute($stmt);
-            $sql = "SELECT idUsers FROM users WHERE uidUsers=$username";
+            $sql = "SELECT id FROM users WHERE uid=$username";
             mysqli_stmt_store_result($row);
             mysqli_stmt_prepare($stmt, $sql);
             mysqli_stmt_execute($stmt);
             session_start();
-            $_SESSION['userId'] = $row['idUsers'];
-            $_SESSION['userUid'] = $row['uidUsers'];
+            $_SESSION['userId'] = $row['id'];
+            $_SESSION['userUid'] = $row['uid'];
             header("Location: ../signup.php?signup=sucsess");
             exit();
           }

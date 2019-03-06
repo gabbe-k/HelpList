@@ -57,6 +57,16 @@
         margin-left: .25rem;
       }
 
+      .hidden-form {
+        display: none;
+      }
+
+      .tmp-request {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
       .request {
 
         display: grid;

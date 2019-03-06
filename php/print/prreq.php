@@ -7,7 +7,9 @@
 
   if ($resultLen == 0) {
     ?>
-    <p>No requests added</p>
+    <div class="tmp-request">
+      <p>No requests added</p>
+    </div>
     <?php
   }
   else {
@@ -26,7 +28,7 @@
           <p><?php echo $row['reqText']; ?></p>
         </div>
       </div>
-      <form class="" action="index.html" method="post">
+      <form class="hidden-form" action="index.html" method="post">
         <input type="hidden" name="" value="<?php echo $row['postId'] ?>">
       </form>
       <?php

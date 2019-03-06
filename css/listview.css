@@ -73,6 +73,14 @@ p {
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;
 }
+.listview-wrap .request-wrap .hidden-form {
+  display: none;
+}
+.listview-wrap .request-wrap .tmp-request {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
 .listview-wrap .request-wrap .request {
   display: grid;
   grid-template-columns: 0.025fr 0.1fr 1fr;

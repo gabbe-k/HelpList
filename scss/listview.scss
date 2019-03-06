@@ -80,7 +80,8 @@
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          padding: .4rem;
+          padding-left: .2rem;
+          padding-right: .4rem;
           @include UnderThin();
           font-size: 0.8rem;
         }
@@ -134,6 +135,7 @@
             input[type=text] {
               width: 10rem !important;
               height: 1.5rem !important;
+              color: black !important;
             }
             input[type=submit] {
               width: 2rem !important;

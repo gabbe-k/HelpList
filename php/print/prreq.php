@@ -40,7 +40,7 @@
  ?>
 
  <script type="text/javascript">
-   /*$(function () {
+   $(function () {
 
      $('#request-form').on('submit', function (e) {
 
@@ -58,12 +58,12 @@
 
      });
 
-   }); */
+   });
  </script>
 
  <div class="request-formsection-outer-wrap">
      <div class="request-form-wrap">
-       <form id="request-form" action="./php/func/post.php" method="post">
+       <form id="request-form" action="./php/func/post.php" method="post" autocomplete="off">
          <input type="text" name="reqText" placeholder="Input your help request here...">
          <input type="submit" name="" value="Submit">
        </form>

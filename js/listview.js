@@ -4,7 +4,7 @@ function update() {
     url: '../php/print/prreq.php',
     success:
     function(data){
-    $('.request-wrap').html(data); //insert text of test.php into your div
+    $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
 
     },
   });

@@ -70,7 +70,7 @@ p {
   grid-template-columns: repeat(12, 1fr);
 }
 .header-outer-wrap .header-inner-wrap .header-title {
-  grid-column: 3/12;
+  grid-column: 2/12;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -289,7 +289,8 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.4rem;
+  padding-left: 0.2rem;
+  padding-right: 0.4rem;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   font-size: 0.8rem;
 }
@@ -338,6 +339,7 @@ p {
 .listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=text] {
   width: 10rem !important;
   height: 1.5rem !important;
+  color: black !important;
 }
 .listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit] {
   width: 2rem !important;

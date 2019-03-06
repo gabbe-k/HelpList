@@ -1,7 +1,7 @@
 <?php
 // user forced to run signup form via signup button
 if (isset($_POST['signup-submit'])){
-  require 'dph.inc.php';
+  require 'dbh.inc.php';
   $username = $_POST['uid'];
   $email = $_POST['mail'];
   $password = $_POST['pwd'];
@@ -27,7 +27,7 @@ if (isset($_POST['signup-submit'])){
     // Does the username alreaddy exist?
     else {
       $sql = "SELECT * FROM users WHERE uidUsers=?;";
-      $stmt =mysqli_stmt_init($conn);
+      $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: ../signup.php?error=sqlerror");
         exit();
@@ -40,7 +40,7 @@ if (isset($_POST['signup-submit'])){
           header("Location: ../signup.php?error=usertaken&mail=".$email);
           exit();
         }else{
-          $sql "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
+          $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?,?,?);";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../signup.php?error=sqlerror");

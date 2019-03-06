@@ -8,14 +8,26 @@
       <h4>Login</h4>
     </div>
 
+    <?php
+      if (isset($_SESSION['userId'])){
+     ?>
+    <form action="Includes/logout.inc.php" method="post">
+    <button type="submit" name="logout-submit">Logout</button>
+    </form>
+    <?php
+      }
+      else {
+        ?>
     <div class="header-login-form">
       <form class="" action="../Inc/login.inc.php" method="">
         <input type="text" name="mailuid" placeholder="Username/Email">
         <input type="text" name="pwd" placeholder="Password">
         <input type="submit" name="" value="Submit">
       </form>
-
     </div>
+    <?php
+      }
+     ?>
 
     <div class="header-login-signup">
       <a href="../index.php?page=signup">No account?</a>

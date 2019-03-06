@@ -1,7 +1,7 @@
 <?php
-  include("././Inc/dbh.inc.php");
+  include("../../Inc/dbh.inc.php");
 
-  $sql = "SELECT users.uid, requests.reqText FROM users, requests WHERE users.id = requests.id";
+  $sql = "SELECT users.uid, requests.reqText, requests.postId FROM users, requests WHERE users.id = requests.id";
   $result = mysqli_query($conn, $sql);
   $resultLen = mysqli_num_rows($result);
 
@@ -26,6 +26,9 @@
           <p><?php echo $row['reqText']; ?></p>
         </div>
       </div>
+      <form class="" action="index.html" method="post">
+        <input type="hidden" name="" value="<?php echo $row['postId'] ?>">
+      </form>
       <?php
 
     }
@@ -33,3 +36,37 @@
   }
 
  ?>
+
+ <script type="text/javascript">
+   $(function () {
+
+     $('#request-form').on('submit', function (e) {
+
+       e.preventDefault();
+
+       $.ajax({
+         type: 'post',
+         url: '../php/func/post.php',
+         data: $('#request-form').serialize(),
+         success: function () {
+           console.log("form submitted");
+           update();
+         }
+       });
+
+     });
+
+   });
+ </script>
+
+ <div class="request-formsection-outer-wrap">
+     <div class="request-form-wrap">
+       <form id="request-form" action="./php/func/post.php" method="post">
+         <input type="text" name="reqText" placeholder="Input your help request here...">
+         <input type="submit" name="" value="Submit">
+       </form>
+     </div>
+     <div class="remove-tags-wrap">
+       <button type="button" name="button" id="remove-tags-button">Remove</button>
+     </div>
+ </div>

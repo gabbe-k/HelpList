@@ -14,10 +14,9 @@
 		else {
 			$id = $_SESSION['userId'];
 			$uid = $_SESSION['userUid'];
-    	$postId = GetId($conn, "requests", "postId");
 
-			$stmt = $conn->prepare("INSERT INTO requests (id, postId, reqText, idTeachr) VALUES ('$id', '$postId', (?), '100')");
-			$stmt->bind_param('s', $reqText);
+			$stmt = $conn->prepare("INSERT INTO requests (id,reqText) VALUES (?,?)");
+			$stmt->bind_param('ss', $id, $reqText);
 			$stmt->execute();
 			exit;
 		}

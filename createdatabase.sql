@@ -1,22 +1,23 @@
-DROP TABLE Users;
-DROP TABLE Requests;
+DROP TABLE users;
+DROP TABLE requests;
 DROP DATABASE helplist;
 
 CREATE DATABASE helplist;
 
-CREATE TABLE Users(
-	id int(10),
+CREATE TABLE users(
+		id int NOT NULL AUTO_INCREMENT,
     email varchar(10),
     uid text,
     pwd text,
-    isTeachr int --< bit? >--
+    isTeachr int,
+		PRIMARY KEY (id)
 );
 
-INSERT INTO `users` (`id`, `email`, `uid`, `pwd`, `isTeachr`) VALUES ('100', 'bigman', 'bigman', 'bigman', '0');
-
-CREATE TABLE Requests(
+CREATE TABLE requests(
 	id int(10),
-	postId int(10),
+	postId int NOT NULL AUTO_INCREMENT,
     reqText text,
-    idTeachr int(10)
+    idTeachr int(10),
+		PRIMARY KEY (postId)
+
 );

@@ -40,7 +40,7 @@
  ?>
 
  <script type="text/javascript">
-   $(function () {
+   /*$(function () {
 
      $('#request-form').on('submit', function (e) {
 
@@ -58,7 +58,7 @@
 
      });
 
-   });
+   }); */
  </script>
 
  <div class="request-formsection-outer-wrap">

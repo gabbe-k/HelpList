@@ -41,7 +41,7 @@ if (isset($_POST['signup-submit'])){
           header("Location: ../signup.php?error=usertaken&mail=".$email);
           exit();
         }else{
-          $sql = "INSERT INTO users (id, uid, email, pwd) VALUES (?,?,?,?);";
+          $sql = "INSERT INTO users (uid, email, pwd) VALUES (?,?,?);";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../signup.php?error=sqlerror");
@@ -50,9 +50,8 @@ if (isset($_POST['signup-submit'])){
             // Hash password
             $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
             //Generates user id
-            $id = GetId($conn, "users", "id");
 
-            mysqli_stmt_bind_param($stmt, "ssss", $id, $username, $email, $hashedpwd);
+            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedpwd);
             mysqli_stmt_execute($stmt);
             $sql = "SELECT id FROM users WHERE uid=$username";
             mysqli_stmt_store_result($row);

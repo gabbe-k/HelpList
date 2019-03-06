@@ -68,7 +68,8 @@ p {
   background: none;
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 0.5rem;
+  grid-auto-rows: 2rem;
+  grid-row-gap: 0.75rem;
 }
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;

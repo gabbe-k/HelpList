@@ -18,25 +18,22 @@
          <input type="submit" name="login-submit" value="Submit">
        </form>
      </div>
+     <div class="header-login-signup">
+       <a href="../index.php?page=signup">No account?</a>
+     </div>
     <?php
       }
       else {
         ?>
-    <div class="header-login-title">
-      <h4>Logout</h4>
-    </div>
+
     <div class="header-login-form">
       <form action="Inc/logout.inc.php" method="post">
-      <button type="submit" name="logout-submit">Logout</button>
+        <input id="logout-button" type="submit" name="logout-submit" value="Log out">
       </form>
     </div>
     <?php
       }
      ?>
-
-    <div class="header-login-signup">
-      <a href="../index.php?page=signup">No account?</a>
-    </div>
 
   </div>
 </div>

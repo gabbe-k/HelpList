@@ -2,9 +2,10 @@
 
 .listview-wrap {
   @include UnderThin;
-
-  height: 75%;
-  width: 75%;
+  grid-row: 2;
+  grid-column: 2/4;
+  height: 100%;
+  width: 100%;
   background: $PrimDark;
 
   .listview-info {
@@ -26,6 +27,10 @@
       grid-template-columns: 1fr;
       grid-row-gap: .5rem;
       padding: 2rem 6rem 2rem 6rem;
+
+      p {
+        margin-left: .25rem;
+      }
 
       .request {
 

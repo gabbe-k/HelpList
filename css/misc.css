@@ -7,4 +7,24 @@ p {
   font-size: 0.8rem;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Handle on hover */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /*# sourceMappingURL=misc.css.map */

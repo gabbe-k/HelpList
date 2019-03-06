@@ -1,6 +1,8 @@
 <?php
-  require "header.php";
+  require "./view/header.php";
 ?>
+
+
         <main>
           <div class="#">
             <section class="#">
@@ -16,5 +18,5 @@
           </div>
         </main>
 <?php
-  require "footer.php";
+  require "./view/footer.php";
 ?>

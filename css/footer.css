@@ -7,6 +7,27 @@ p {
   font-size: 0.8rem;
 }
 
+/* width */
+::-webkit-scrollbar {
+  overflow: "overlay";
+  width: 0.2rem;
+  scroll-behavior: smooth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Handle on hover */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .footer-outer-wrap {
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);

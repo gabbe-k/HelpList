@@ -118,3 +118,24 @@ p {
   color: white;
   font-size: 0.8rem;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+    scroll-behavior: smooth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+
+      /* Handle on hover */
+      &:hover {
+          background: #555;
+      }
+}

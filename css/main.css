@@ -7,12 +7,36 @@ p {
   font-size: 0.8rem;
 }
 
+/* width */
+::-webkit-scrollbar {
+  overflow: "overlay";
+  width: 0.2rem;
+  scroll-behavior: smooth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Handle on hover */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .main-outer-wrap {
   width: 100%;
   background: #d6d6d6;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr 0.3fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
 }
 
 /*# sourceMappingURL=main.css.map */

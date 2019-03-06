@@ -477,7 +477,7 @@ html {
 .content-wrap {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.15fr 1fr 0.15fr;
+  grid-template-rows: 0.1fr 1fr 0.15fr;
   min-height: 100vh;
   max-height: auto;
   background: #101638;

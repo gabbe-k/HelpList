@@ -9,14 +9,24 @@ if (isset($_POST['login-submit'])){
     }
     else{
         //comparing dbase to input (both username and email possible to use)
-        $sql = "SELECT * FROM users WHERE uid=? OR email=?;";
+
+        $param = "";
+        if(stripos($mailuid,'@') !== FALSE){
+          $param = "email";
+        }
+        else{
+          $param = "uid";
+        }
+
+        $sql = "SELECT * FROM users WHERE $param=(?);";
         $stmt = mysqli_stmt_init($conn);
+
         if (!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../index.php?error=sqlerror");
             exit;
         }
         else{
-            mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
+            mysqli_stmt_bind_param($stmt, "s", $mailuid);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($row = mysqli_fetch_assoc($result)){

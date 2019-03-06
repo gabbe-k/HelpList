@@ -9,22 +9,22 @@
     </div>
 
     <?php
-      if (isset($_SESSION['userId'])){
+      if (!isset($_SESSION['userUid'])){
      ?>
-    <form action="Includes/logout.inc.php" method="post">
-    <button type="submit" name="logout-submit">Logout</button>
-    </form>
+     <div class="header-login-form">
+       <form class="" action="../Inc/login.inc.php" method="post">
+         <input type="text" name="mailuid" placeholder="Username/Email">
+         <input type="password" name="pwd" placeholder="Password">
+         <input type="submit" name="login-submit" value="Submit">
+       </form>
+     </div>
     <?php
       }
       else {
         ?>
-    <div class="header-login-form">
-      <form class="" action="../Inc/login.inc.php" method="post">
-        <input type="text" name="mailuid" placeholder="Username/Email">
-        <input type="password" name="pwd" placeholder="Password">
-        <input type="submit" name="login-submit" value="Submit">
-      </form>
-    </div>
+    <form action="Inc/logout.inc.php" method="post">
+    <button type="submit" name="logout-submit">Logout</button>
+    </form>
     <?php
       }
      ?>

@@ -58,7 +58,7 @@ if (isset($_POST['signup-submit'])){
             session_start();
             $_SESSION['userId'] = $row['idUsers'];
             $_SESSION['userUid'] = $row['uidUsers'];
-            header("Location: ../#?signup=sucsess");
+            header("Location: ../signup.php?signup=sucsess");
             exit();
           }
         }

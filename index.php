@@ -16,7 +16,7 @@
   <body>
 
     <div class="content-wrap">
-
+    <a href="temp.php" class="#">temp signup</a>
       <div class="header-outer-wrap">
         <?php include("view/header.php"); ?>
       </div>

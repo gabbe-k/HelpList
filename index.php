@@ -1,8 +1,4 @@
-<?php
 
-
-
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -22,7 +18,15 @@
       </div>
 
       <div class="main-outer-wrap">
-        <?php include("view/listview.php"); ?>
+        <?php
+        if (isset($_GET["page"]) && $_GET["page"] == "signup") {
+          include("view/signup.php");
+        }
+        else {
+          include("view/listview.php");
+        }
+
+        ?>
       </div>
 
       <div class="footer-outer-wrap">

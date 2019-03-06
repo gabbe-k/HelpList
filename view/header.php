@@ -4,13 +4,13 @@
   </div>
   <div class="header-login-wrap">
 
-    <div class="header-login-title">
-      <h4>Login</h4>
-    </div>
-
     <?php
       if (!isset($_SESSION['userUid'])){
      ?>
+     <div class="header-login-title">
+       <h4>Login</h4>
+     </div>
+
      <div class="header-login-form">
        <form class="" action="../Inc/login.inc.php" method="post">
          <input type="text" name="mailuid" placeholder="Username/Email">
@@ -22,9 +22,14 @@
       }
       else {
         ?>
-    <form action="Inc/logout.inc.php" method="post">
-    <button type="submit" name="logout-submit">Logout</button>
-    </form>
+    <div class="header-login-title">
+      <h4>Logout</h4>
+    </div>
+    <div class="header-login-form">
+      <form action="Inc/logout.inc.php" method="post">
+      <button type="submit" name="logout-submit">Logout</button>
+      </form>
+    </div>
     <?php
       }
      ?>

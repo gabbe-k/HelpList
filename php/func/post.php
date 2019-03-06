@@ -1,6 +1,7 @@
 <?php
 	session_start();
   include("../../Inc/dbh.inc.php");
+  include("../../Inc/dupesearch.inc.php");
 	//sätter upp det som ska skrivas på sidan
 	if(isset($_POST['reqText'])){
 		$reqText = strip_tags($_POST['reqText']);
@@ -11,7 +12,11 @@
 			return;
 		}
 		else {
-			$stmt = $conn->prepare("INSERT INTO requests (id, postId, reqText, idTeachr) VALUES ('100', '25', (?), '100')");
+			$id = $_SESSION['userId'];
+			$uid = $_SESSION['userUid'];
+    	$postId = GetId($conn, "requests", "postId");
+
+			$stmt = $conn->prepare("INSERT INTO requests (id, postId, reqText, idTeachr) VALUES ('$id', '$postId', (?), '100')");
 			$stmt->bind_param('s', $reqText);
 			$stmt->execute();
 			exit;

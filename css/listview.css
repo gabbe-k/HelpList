@@ -50,6 +50,16 @@ p {
   text-align: center;
   font-weight: 400;
 }
+.listview-wrap .tmp-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+.listview-wrap .tmp-wrap p {
+  text-align: center;
+}
 .listview-wrap .request-wrap {
   grid-column: 2;
   grid-row: 2;

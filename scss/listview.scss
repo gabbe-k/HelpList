@@ -29,6 +29,18 @@
 
   }
 
+  .tmp-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 2/3;
+    grid-column: 1/4;
+
+    p {
+      text-align: center;
+    }
+  }
+
   .request-wrap {
 
       grid-column: 2;

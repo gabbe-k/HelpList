@@ -20,6 +20,7 @@
 
       <div class="main-outer-wrap">
         <?php
+        
         if (isset($_GET["page"]) && $_GET["page"] == "signup") {
           include("view/signup.php");
         }

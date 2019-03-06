@@ -9,9 +9,25 @@
     </div>
 
   </div>
+  <?php
+    if (isset($_SESSION['userUid'])){
+   ?>
 
   <div class="request-wrap">
 
   </div>
+
+  <?php
+    }
+    else {
+    ?>
+    <div class="tmp-wrap">
+      <div class="">
+        <p>Log in to view the current requests</p>
+      </div>
+    </div>
+    <?php
+    }
+   ?>
 
 </div>

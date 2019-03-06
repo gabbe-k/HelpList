@@ -2,8 +2,8 @@
   require "header.php";
 ?>
         <main>
-          <div class="wrapper-main">
-            <section class="section-default">
+          <div class="#">
+            <section class="#">
               <h1>Signup</h1>
               <form action="Includes/signup.inc.php" method="POST">
                 <input type="text" name="uid" placeholder="Username">

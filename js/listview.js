@@ -16,6 +16,7 @@ $(document).ready(function() {
   update();
 
   var checkedElementArr = [];
+  var listElementArr = [];
 
   $('.listview-wrap').click(function(event) {
 
@@ -26,6 +27,7 @@ $(document).ready(function() {
         if ($(checkmark).hasClass("isChecked")) {
 
           var postId = $(checkmark).parent().next().children().val();
+          var listElement = $(checkmark).parent();
           $(checkmark).removeClass("animatable--now");
           $(checkmark).removeClass("isChecked");
 
@@ -33,11 +35,16 @@ $(document).ready(function() {
             return value != postId;
           });
 
+          listElementArr = jQuery.grep(listElementArr, function(value) {
+            return value != postId;
+          });
+
         }
         else {
           var postId = $(checkmark).parent().next().children().val();
-          console.log(postId);
+          var listElement = $(checkmark).parent();
           checkedElementArr.push(postId);
+          listElement.push(postId);
           $(checkmark).addClass("animatable--now");
           $(checkmark).addClass("isChecked");
 
@@ -48,6 +55,11 @@ $(document).ready(function() {
 
 
       if ($(event.target).is('#remove-tags-button') && checkedElementArr.length > 0) {
+
+        /*jQuery.each(listElement, function(index, item) {
+            console.log(item);
+            $(item).fadeOut();
+        }); */
 
         $.post("../php/print/prremovepost.php",  {postIdArr: checkedElementArr}, function(output) {
 

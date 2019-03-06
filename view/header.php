@@ -19,10 +19,10 @@
       else {
         ?>
     <div class="header-login-form">
-      <form class="" action="../Inc/login.inc.php" method="">
+      <form class="" action="../Inc/login.inc.php" method="post">
         <input type="text" name="mailuid" placeholder="Username/Email">
-        <input type="text" name="pwd" placeholder="Password">
-        <input type="submit" name="" value="Submit">
+        <input type="password" name="pwd" placeholder="Password">
+        <input type="submit" name="login-submit" value="Submit">
       </form>
     </div>
     <?php

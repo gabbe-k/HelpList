@@ -32,7 +32,7 @@ if (isset($_POST['signup-submit'])){
         header("Location: ../signup.php?error=sqlerror");
         exit();
       }else{
-        mysqli_stmt_bin_param($stmt, "s", $mailuid);
+        mysqli_stmt_bind_param($stmt, "s", $mailuid);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);
@@ -47,7 +47,7 @@ if (isset($_POST['signup-submit'])){
             exit();
           }else{
             // Hash password
-            $hashedpwd = passsword_hash($password, PASSWORD_DEFAULT);
+            $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
 
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedpwd);
             mysqli_stmt_execute($stmt);

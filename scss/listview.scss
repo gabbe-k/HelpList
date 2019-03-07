@@ -225,6 +225,30 @@
 
       form {
 
+        .checkbox-wrap{
+          background: $PrimText;
+          @include UnderThin;
+          display: grid;
+          grid-template-columns: 1fr .25fr;
+          margin: .25rem 0;
+          border-radius: .1rem;
+
+          .checkbox-text {
+            p {
+              font-size: .65rem;
+            }
+
+            display: flex;
+            align-items: center;
+          }
+          .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: .25rem;
+          }
+        }
+
         input[type=text], select {
           width: 100%;
           padding: .5rem;
@@ -238,8 +262,8 @@
 
         input[type=password], select {
           width: 100%;
-          padding: .5rem;
           margin: .25rem 0;
+          padding: .5rem;
           display: inline-block;
           border: none;
           border-radius: .1rem;
@@ -258,6 +282,13 @@
 
         input[type=submit]:hover {
           background-color: $ThirdDark;
+        }
+
+        input[type=checkbox] {
+          margin: .25rem 0 !important;
+          outline: none;
+          height: 1rem;
+          width: 1rem;
         }
 
       }

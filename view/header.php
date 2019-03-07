@@ -1,6 +1,12 @@
 <div class="header-inner-wrap">
   <div class="header-title">
-    <h2>Torbjörn's tech support</h2>
+    <h2>
+    <?php
+      if (isset($_SESSION['userUid'])) {
+        echo $_SESSION['userUid'] . "'s classroom";
+      }
+     ?>
+   </h2>
   </div>
   <div class="header-login-wrap">
 

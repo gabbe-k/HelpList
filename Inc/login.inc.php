@@ -39,6 +39,9 @@ if (isset($_POST['login-submit'])){
                     session_start();
                     $_SESSION['userId'] = $row['id'];
                     $_SESSION['userUid'] = $row['uid'];
+                    if ($row['isTeachr'] == 1) {
+                      $_SESSION['isTeachr'] = 1;
+                    }
                     header("Location: ../index.php?login=success");
                     exit;
                 }

@@ -7,7 +7,7 @@ function update() {
     $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
 
     },
-  }); 
+  });
 
 }
 

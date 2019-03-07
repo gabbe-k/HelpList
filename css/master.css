@@ -60,6 +60,7 @@ p {
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   z-index: 999;
+  height: 6.5rem;
 }
 .header-outer-wrap .header-inner-wrap {
   height: 100%;
@@ -67,30 +68,40 @@ p {
   color: white;
   font-weight: 200;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 0.3fr 1fr 1fr 0.3fr;
 }
 .header-outer-wrap .header-inner-wrap .header-title {
-  grid-column: 2/12;
+  grid-column: 2/4;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.header-outer-wrap .header-inner-wrap .header-logout-wrap input[type=submit] {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0.15rem;
+  border-radius: 0.1rem;
+  border-bottom-right-radius: 0.2rem;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 .header-outer-wrap .header-inner-wrap .header-login-wrap {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  grid-column: 12;
+  padding: 0.25rem 0.25rem 0 0.45rem;
+  grid-column: 4;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 1fr 0.1fr;
+  grid-template-rows: 0.1fr 0.79fr 0.1fr;
   background: #212121;
-  border-radius: 0.15rem;
-  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
 }
 .header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-title h4 {
   text-align: center;
 }
 .header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-signup {
-  padding-top: 0.5rem;
+  margin-top: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +111,22 @@ p {
   text-decoration: none;
   color: #EDEDED;
 }
+.header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-form {
+  grid-row: 2;
+}
+.header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-form form {
+  height: 100%;
+  width: 100%;
+}
 .header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-form form input[type=text] {
+  margin: 0;
+  border: none;
+  outline: none;
+  padding: 0.15rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+}
+.header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-form form input[type=password] {
   margin: 0;
   border: none;
   outline: none;
@@ -112,12 +138,12 @@ p {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
   border: none;
   outline: none;
   padding: 0.15rem;
   border-radius: 0.1rem;
   box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .animatable--now {
@@ -261,11 +287,11 @@ p {
   grid-row: 2;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  grid-auto-rows: 2rem;
   background: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.75rem;
-  grid-auto-rows: 2rem;
 }
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;
@@ -403,6 +429,9 @@ p {
 .listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form input[type=submit]:active {
   box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0);
 }
+.listview-wrap .request-wrap-signup {
+  grid-auto-rows: auto !important;
+}
 .listview-wrap .remove-tags-wrap {
   grid-column: 9/10;
   margin-bottom: 0.15rem;
@@ -448,7 +477,6 @@ p {
 .listview-wrap .listview-signup-wrap {
   width: 100%;
   height: 100%;
-  display: grid;
 }
 .listview-wrap .listview-signup-wrap .listview-signup-form-wrap {
   width: 100%;

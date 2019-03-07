@@ -27,19 +27,20 @@
      <div class="header-login-signup">
        <a href="../index.php?page=signup">No account?</a>
      </div>
+
     <?php
       }
       else {
         ?>
-
-    <div class="header-login-form">
-      <form action="Inc/logout.inc.php" method="post">
-        <input id="logout-button" type="submit" name="logout-submit" value="Log out">
-      </form>
+    <div class="header-logout-wrap">
+      <div class="logout-wrap">
+        <form id="logout-form" action="Inc/logout.inc.php" method="post">
+          <input id="logout-button" type="submit" name="logout-submit" value="Logout">
+        </form>
+      </div>
     </div>
     <?php
       }
      ?>
-
   </div>
 </div>

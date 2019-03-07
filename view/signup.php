@@ -1,3 +1,5 @@
+<script src="../js/signup.js"></script>
+
 <div class="listview-wrap">
 
   <div class="listview-info-wrap">

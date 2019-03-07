@@ -9,7 +9,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 

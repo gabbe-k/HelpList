@@ -9,7 +9,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 
@@ -38,7 +38,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 
@@ -157,7 +157,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 
@@ -197,7 +197,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 
@@ -231,7 +231,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.35rem;
   scroll-behavior: smooth;
 }
 
@@ -540,6 +540,7 @@ p {
 }
 
 html {
+  overflow-y: scroll;
   font-size: 24px;
 }
 

@@ -1,60 +1,90 @@
 <?php
   include("../../Inc/dbh.inc.php");
 
-  $sql = "SELECT users.uid, requests.reqText, requests.postId FROM users, requests WHERE users.id = requests.id";
-  $result = mysqli_query($conn, $sql);
-  $resultLen = mysqli_num_rows($result);
+  $currentClass = $_POST['classId'];
 
-  if ($resultLen == 0) {
-    ?>
-    <div class="tmp-request">
-      <p>No requests added</p>
-    </div>
-    <?php
+  if (isset($_POST['classId'])) {
+
+
+      $sql = "SELECT users.uid, requests.reqText, requests.postId FROM users, requests WHERE users.id = requests.id
+      AND requests.classId = '$currentClass'";
+      $result = mysqli_query($conn, $sql);
+      $resultLen = mysqli_num_rows($result);
+
+      if ($resultLen == 0) {
+        ?>
+        <div class="tmp-request">
+          <p>No requests added</p>
+        </div>
+        <?php
+      }
+      else {
+
+        for ($i=0; $i < $resultLen; $i++) {
+
+          $row = mysqli_fetch_assoc($result);
+          ?>
+          <div class="request">
+            <div class="request-checkmark">
+            </div>
+            <div class="request-username-wrap">
+              <p><?php echo $row['uid'] ?></p>
+            </div>
+            <div class="request-text-wrap">
+              <p><?php echo $row['reqText']; ?></p>
+            </div>
+          </div>
+          <form class="hidden-form" action="index.html" method="post">
+            <input type="hidden" name="" value="<?php echo $row['postId'] ?>">
+          </form>
+          <?php
+
+        }
+
+      }
+
   }
   else {
-
-    for ($i=0; $i < $resultLen; $i++) {
-
-      $row = mysqli_fetch_assoc($result);
-      ?>
-      <div class="request">
-        <div class="request-checkmark">
-        </div>
-        <div class="request-username-wrap">
-          <p><?php echo $row['uid'] ?></p>
-        </div>
-        <div class="request-text-wrap">
-          <p><?php echo $row['reqText']; ?></p>
-        </div>
-      </div>
-      <form class="hidden-form" action="index.html" method="post">
-        <input type="hidden" name="" value="<?php echo $row['postId'] ?>">
-      </form>
-      <?php
-
-    }
-
+    echo "no";
   }
-
- ?>
+?>
 
  <script type="text/javascript">
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
    $(function () {
+
+     var classId = getParameterByName("class");
 
      $('#request-form').on('submit', function (e) {
 
        e.preventDefault();
 
-       $.ajax({
+       $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
+
+          console.log(data);
+          update();
+
+       });
+
+       /*$.ajax({
          type: 'post',
          url: '../php/func/post.php',
-         data: $('#request-form').serialize(),
+         data: $('#request-form').serialize(), classId,
          success: function () {
            console.log("form submitted");
            update();
          }
-       });
+       }); */
 
      });
 

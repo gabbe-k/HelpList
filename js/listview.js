@@ -1,12 +1,31 @@
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
 function update() {
 
-  $.ajax({
+/*  $.ajax({
     url: '../php/print/prreq.php',
     success:
     function(data){
     $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
 
     },
+  }); */
+
+  var classId = getParameterByName("class");
+
+  $.post("../php/print/prreq.php",  {classId: classId}, function(data) {
+
+    $('.request-wrap').hide().html(data).fadeIn(200);
+
   });
 
 }

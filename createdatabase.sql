@@ -25,6 +25,7 @@ CREATE TABLE requests(
 CREATE TABLE classrooms(
  	teacherId int(10),
 	classId int NOT NULL AUTO_INCREMENT,
+	className text,
 	PRIMARY KEY (classId)
 
 );

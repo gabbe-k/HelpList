@@ -4,7 +4,7 @@
   include("../../Inc/dbh.inc.php");
   session_start();
 
-  $stmt = $conn->prepare("SELECT classrooms.className, classrooms.classId
+  $stmt = $conn->prepare("SELECT classrooms.className, classrooms.classId, users.uid
   FROM users, classrooms
   WHERE classrooms.teacherId = users.id
   ORDER BY classrooms.classId ASC");
@@ -29,7 +29,7 @@
       <div class="request">
         <div class="request-classroom-wrap">
           <div class="request-classroom-inner-wrap">
-            <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>"><?php echo $row['className']; ?></a>
+            <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>&teacherName=<?php echo $row['uid']; ?>"><?php echo $row['className']; ?></a>
           </div>
         </div>
       </div>

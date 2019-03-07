@@ -2,8 +2,11 @@
   <div class="header-title">
     <h2>
     <?php
-      if (isset($_SESSION['userUid'])) {
-        echo $_SESSION['userUid'] . "'s classroom";
+      if (isset($_SESSION['userUid']) && isset($_GET['page']) && $_GET['page'] == "listview") {
+        echo "<h1>" . $_GET['teacherName'] . "'s classroom</h1>";
+      }
+      else {
+        echo "<h1>HelpList</h1>";
       }
      ?>
    </h2>

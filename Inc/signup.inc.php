@@ -7,7 +7,7 @@ if (isset($_POST['signup-submit'])){
   $email = $_POST['mail'];
   $password = $_POST['pwd'];
   $passwordRepeat = $_POST['pwd-repeat'];
-  $Teachr = $_POST['teacherId'];
+  $Teachr = $_POST['isTeachr'];
   //error messages   Using # for replacement
   if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
     header("Location: ../signup.php?error=emptyfields&uid".$username || "&mail=".$email);
@@ -41,7 +41,7 @@ if (isset($_POST['signup-submit'])){
           header("Location: ../signup.php?error=usertaken&mail=".$email);
           exit();
         }else{
-          $sql = "INSERT INTO users (uid, email, pwd, teacherId) VALUES (?,?,?,?);";
+          $sql = "INSERT INTO users (uid, email, pwd, isTeachr) VALUES (?,?,?,?);";
           $stmt = mysqli_stmt_init($conn);
           if (!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../signup.php?error=sqlerror");

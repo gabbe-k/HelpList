@@ -51,7 +51,7 @@ if (isset($_POST['signup-submit'])){
             $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
             //Generates user id
 
-            mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $hashedpwd $Teachr);
+            mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $hashedpwd, $Teachr);
             mysqli_stmt_execute($stmt);
             $sql = "SELECT id FROM users WHERE uid=$username";
             mysqli_stmt_store_result($row);

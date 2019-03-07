@@ -52,6 +52,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-row-gap: .75rem;
+      grid-auto-rows: 2rem;
 
       p {
         margin-left: .25rem;
@@ -75,21 +76,7 @@
         grid-column-gap: .25rem;
         color: $Text;
 
-        .request-classroom-wrap {
-
-          a {
-            background: $PrimText;
-            height: 100%;
-            width: 100%;
-            text-decoration: none;
-            color: white;
-            padding: .25rem;
-            @include UnderThin();
-            border-radius: .15rem;
-          }
-        }
-
-        div:not(.request-checkmark):not(.request-classroom-wrap) {
+        div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap) {
           display: flex;
           justify-content: flex-start;
           align-items: center;
@@ -97,6 +84,36 @@
           padding-right: .4rem;
           @include UnderThin();
           font-size: 0.8rem;
+        }
+
+        .request-classroom-wrap {
+
+          grid-column: 1/4;
+
+          .request-classroom-inner-wrap {
+
+            background: $PrimText;
+            height: 100%;
+            width: 100%;
+            @include UnderThin();
+            border-radius: .15rem;
+
+            a {
+              text-decoration: none;
+              width: 100%;
+              height: 100%;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            :hover {
+              background: $Darkest;
+              border-radius: .15rem;
+            }
+
+          }
         }
 
         .request-checkmark {
@@ -117,6 +134,10 @@
           border-radius: .15rem;
           background: $PrimText;
           font-weight: lighter;
+        }
+
+        .fullSize {
+          grid-column: 2/4;
         }
 
         .request-text-wrap {

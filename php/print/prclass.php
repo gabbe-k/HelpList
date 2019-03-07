@@ -1,15 +1,18 @@
+<script src="../../js/prreq.js"></script>
+
 <?php
   include("../../Inc/dbh.inc.php");
   session_start();
 
-  $sql = "SELECT classrooms.className, classrooms.classId
+  $stmt = $conn->prepare("SELECT classrooms.className, classrooms.classId
   FROM users, classrooms
-  WHERE classrooms.teacherId = users.id";
+  WHERE classrooms.teacherId = users.id
+  ORDER BY classrooms.classId ASC");
 
-  $result = mysqli_query($conn, $sql);
-  $resultLen = mysqli_num_rows($result);
+  $stmt->execute();
+  $res = $stmt->get_result();
 
-  if ($resultLen == 0) {
+  if ($res->num_rows == 0) {
     ?>
     <div class="tmp-request">
       <p>No classrooms added</p>
@@ -18,13 +21,16 @@
   }
   else {
 
-    for ($i=0; $i < $resultLen; $i++) {
+    for ($i=0; $i < $res->num_rows; $i++) {
 
-      $row = mysqli_fetch_assoc($result);
+      $row = $res->fetch_assoc();
       ?>
+
       <div class="request">
         <div class="request-classroom-wrap">
-          <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>"><?php echo $row['className']; ?></a>
+          <div class="request-classroom-inner-wrap">
+            <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>"><?php echo $row['className']; ?></a>
+          </div>
         </div>
       </div>
       <?php
@@ -34,28 +40,6 @@
   }
 
  ?>
-
- <script type="text/javascript">
-   $(function () {
-
-     $('#request-form').on('submit', function (e) {
-
-       e.preventDefault();
-
-       $.ajax({
-         type: 'post',
-         url: '../php/func/class.php',
-         data: $('#request-form').serialize(),
-         success: function () {
-           console.log("form submitted");
-           update();
-         }
-       });
-
-     });
-
-   });
- </script>
 
  <?php
   if (isset($_SESSION['isTeachr']) &&  $_SESSION['isTeachr'] == 1) {

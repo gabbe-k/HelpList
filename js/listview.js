@@ -11,14 +11,7 @@ function getParameterByName(name, url) {
 
 function update() {
 
-/*  $.ajax({
-    url: '../php/print/prreq.php',
-    success:
-    function(data){
-    $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
-
-    },
-  }); */
+  console.log("update");
 
   var classId = getParameterByName("class");
 
@@ -33,6 +26,10 @@ function update() {
 $(document).ready(function() {
 
   update();
+
+  /*setInterval(function(){
+        update();
+  }, 2000); */
 
   var checkedElementArr = [];
   var listElementArr = [];

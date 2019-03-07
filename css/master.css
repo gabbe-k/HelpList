@@ -265,6 +265,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.75rem;
+  grid-auto-rows: 2rem;
 }
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;
@@ -284,17 +285,7 @@ p {
   grid-column-gap: 0.25rem;
   color: #EDEDED;
 }
-.listview-wrap .request-wrap .request .request-classroom-wrap a {
-  background: #212121;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  color: white;
-  padding: 0.25rem;
-  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
-  border-radius: 0.15rem;
-}
-.listview-wrap .request-wrap .request div:not(.request-checkmark):not(.request-classroom-wrap) {
+.listview-wrap .request-wrap .request div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -302,6 +293,29 @@ p {
   padding-right: 0.4rem;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   font-size: 0.8rem;
+}
+.listview-wrap .request-wrap .request .request-classroom-wrap {
+  grid-column: 1/4;
+}
+.listview-wrap .request-wrap .request .request-classroom-wrap .request-classroom-inner-wrap {
+  background: #212121;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request .request-classroom-wrap .request-classroom-inner-wrap a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.listview-wrap .request-wrap .request .request-classroom-wrap .request-classroom-inner-wrap :hover {
+  background: #0c0c0c;
+  border-radius: 0.15rem;
 }
 .listview-wrap .request-wrap .request .request-checkmark {
   width: 2rem;
@@ -319,6 +333,9 @@ p {
   border-radius: 0.15rem;
   background: #212121;
   font-weight: lighter;
+}
+.listview-wrap .request-wrap .request .fullSize {
+  grid-column: 2/4;
 }
 .listview-wrap .request-wrap .request .request-text-wrap {
   border-radius: 0.15rem;

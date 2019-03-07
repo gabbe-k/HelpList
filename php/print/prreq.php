@@ -1,17 +1,34 @@
+<script src="../../js/prreq.js"></script>
+
 <?php
+
   include("../../Inc/dbh.inc.php");
+  session_start();
 
   $currentClass = $_POST['classId'];
 
   if (isset($_POST['classId'])) {
 
+      $stmt = $conn->prepare("SELECT users.uid, requests.reqText, requests.postId
+      FROM users, requests
+      WHERE users.id = requests.id
+      AND requests.classId = (?)
+      ORDER BY requests.postId ASC");
 
-      $sql = "SELECT users.uid, requests.reqText, requests.postId FROM users, requests WHERE users.id = requests.id
-      AND requests.classId = '$currentClass'";
-      $result = mysqli_query($conn, $sql);
-      $resultLen = mysqli_num_rows($result);
+      $stmt->bind_param("s", $currentClass);
+      $stmt->execute();
+      $res = $stmt->get_result();
 
-      if ($resultLen == 0) {
+
+      $stmtTeach = $conn->prepare("SELECT teacherId
+      FROM classrooms WHERE classId = (?)");
+
+      $stmtTeach->bind_param("s", $currentClass);
+      $stmtTeach->execute();
+      $resTeach = $stmtTeach->get_result();
+      $rowId = $resTeach->fetch_assoc();
+
+      if ($res->num_rows == 0) {
         ?>
         <div class="tmp-request">
           <p>No requests added</p>
@@ -20,13 +37,26 @@
       }
       else {
 
-        for ($i=0; $i < $resultLen; $i++) {
+        for ($i=0; $i < $res->num_rows; $i++) {
 
-          $row = mysqli_fetch_assoc($result);
+          $row = $res->fetch_assoc();
           ?>
           <div class="request">
+         <?php
+          if (isset($_SESSION['isTeachr']) &&  $_SESSION['isTeachr'] == 1 && $rowId['teacherId'] == $_SESSION['userId']) {
+          ?>
             <div class="request-checkmark">
             </div>
+          <?php
+          }
+          else {
+           ?>
+           <script type="text/javascript">
+             expandText();
+           </script>
+           <?php
+           }
+           ?>
             <div class="request-username-wrap">
               <p><?php echo $row['uid'] ?></p>
             </div>
@@ -48,48 +78,6 @@
     echo "no";
   }
 ?>
-
- <script type="text/javascript">
-
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-   $(function () {
-
-     var classId = getParameterByName("class");
-
-     $('#request-form').on('submit', function (e) {
-
-       e.preventDefault();
-
-       $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
-
-          console.log(data);
-          update();
-
-       });
-
-       /*$.ajax({
-         type: 'post',
-         url: '../php/func/post.php',
-         data: $('#request-form').serialize(), classId,
-         success: function () {
-           console.log("form submitted");
-           update();
-         }
-       }); */
-
-     });
-
-   });
- </script>
 
  <div class="request-formsection-outer-wrap">
      <div class="request-form-wrap">

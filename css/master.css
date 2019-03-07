@@ -285,7 +285,17 @@ p {
   grid-column-gap: 0.25rem;
   color: #EDEDED;
 }
-.listview-wrap .request-wrap .request div:not(.request-checkmark) {
+.listview-wrap .request-wrap .request .request-classroom-wrap a {
+  background: #212121;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 0.25rem;
+  box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.15rem;
+}
+.listview-wrap .request-wrap .request div:not(.request-checkmark):not(.request-classroom-wrap) {
   display: flex;
   justify-content: flex-start;
   align-items: center;

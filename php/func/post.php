@@ -2,6 +2,10 @@
 	session_start();
   include("../../Inc/dbh.inc.php");
   include("../../Inc/dupesearch.inc.php");
+
+	//något fel med ajax och GET
+  $currentClass = $_POST['classId'];
+
 	//sätter upp det som ska skrivas på sidan
 	if(isset($_POST['reqText'])){
 		$reqText = strip_tags($_POST['reqText']);
@@ -15,8 +19,8 @@
 			$id = $_SESSION['userId'];
 			$uid = $_SESSION['userUid'];
 
-			$stmt = $conn->prepare("INSERT INTO requests (id,reqText) VALUES (?,?)");
-			$stmt->bind_param('ss', $id, $reqText);
+			$stmt = $conn->prepare("INSERT INTO requests (id,reqText,classId) VALUES (?,?,?)");
+			$stmt->bind_param('sss', $id, $reqText, $currentClass);
 			$stmt->execute();
 			exit;
 		}

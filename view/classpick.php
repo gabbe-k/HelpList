@@ -1,11 +1,11 @@
-<script src="../js/listview.js"></script>
+<script src="../js/classpick.js"></script>
 
 <div class="listview-wrap">
 
   <div class="listview-info-wrap">
 
     <div class="listview-info">
-      <h1>Current requests</h1>
+      <h1>Pick a classroom</h1>
     </div>
 
   </div>
@@ -23,7 +23,7 @@
     ?>
     <div class="tmp-wrap">
       <div class="">
-        <p>Log in to view the current requests</p>
+        <p>Log in to view the current classrooms</p>
       </div>
     </div>
     <?php

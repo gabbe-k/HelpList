@@ -18,7 +18,7 @@
             <input type="text" name="mail" placeholder="E-mail">
             <input type="password" name="pwd" placeholder="Password">
             <input type="password" name="pwd-repeat" placeholder="Repeat password">
-            <input type="checkbox" name="idTeachr">
+            <input type="checkbox" name="isTeachr">
             <input type="submit" name="signup-submit" value="Submit">
           </form>
         </div>

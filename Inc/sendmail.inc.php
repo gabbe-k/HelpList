@@ -1,5 +1,5 @@
 <?php
-$rand= rand(10, 20)// random number generator
+$rand= rand(10, 20);// random number generator
 $to = $_POST['email'];
 $header ='From:Tested@TechSupport.com';
 $subject ='Verification Code';

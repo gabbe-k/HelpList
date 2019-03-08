@@ -1,25 +1,11 @@
 <?php
-$rand= rand(10, 20);// random number generator
-$to = $_POST['email'];
-$header ='From:Tested@TechSupport.com';
-$subject ='Verification Code';
-
-$message = "Your Random number is";
-$message .= $rand;
-$message .= "Thank you-TechSupport";
-
-if(empty($to))
-{
-    echo "Email Is Empty";
-}
-else
-{
-    if (mail($to,$subject,$message,$header)){
-
-     echo 'Check Your Email For Verfication Code';
-    }
-    else{
-        echo 'Failed';
-    }
-}
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "test@test.com";
+    $to = "olliver.b13@gmail.com";
+    $subject = "Checking PHP mail";
+    $message = "PHP mail works just fine";
+    $headers = "From:" . $from;
+    mail($to,$subject,$message, $headers);
+    echo "The email message was sent.";
 ?>

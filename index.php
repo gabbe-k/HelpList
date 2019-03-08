@@ -12,6 +12,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
+    //Test
+    <form action="sendmail.inc.php" method="post">
+        <lable>email</lable>>
+        <input type="text" name="email" maxlength="40">
+        <br>
+        <input type="submit" value="Register">
+    </form>
 
     <div class="content-wrap">
       <div class="header-outer-wrap">

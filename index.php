@@ -21,7 +21,9 @@
         $subject = "Checking PHP mail";
         $message = "PHP mail works just fine";
         $headers = "From:" . $from;
-        mail($to,$subject,$message, $headers);
+        mail($to, $subject, $message, $headers);
+        ini_set($to,$subject);
+        ini_set($message, $headers);
         echo "The email message was sent.";
     ?>
 

@@ -84,7 +84,7 @@
        <?php
         if (!isset($_SESSION['numPost'])) {
         ?>
-       <form id="request-form" action="./php/func/sessionsetter.php" method="post" autocomplete="off">
+       <form id="request-form" action="./php/func/post.php" method="post" autocomplete="off">
          <input type="text" name="reqText" placeholder="Input your help request here...">
          <input type="submit" name="" value="Submit">
          <input type="hidden" name="numPost" value="1">

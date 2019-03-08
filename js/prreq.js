@@ -23,7 +23,7 @@
 
        $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
 
-          console.log(data);
+          console.log("hhh");
           update();
 
        });

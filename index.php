@@ -12,21 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    //Test
-    <?php
-        ini_set( 'display_errors', 1 );
-        error_reporting( E_ALL );
-        $from = "test@test.com";
-        $to = "olliver.b13@gmail.com";
-        $subject = "Checking PHP mail";
-        $message = "PHP mail works just fine";
-        $headers = "From:" . $from;
-        mail($to, $subject, $message, $headers);
-        ini_set($to,$subject);
-        ini_set($message, $headers);
-        echo "The email message was sent.";
-    ?>
-
     <div class="content-wrap">
       <div class="header-outer-wrap">
         <?php include("view/header.php"); ?>

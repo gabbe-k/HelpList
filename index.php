@@ -13,12 +13,17 @@
   </head>
   <body>
     //Test
-    <form action="sendmail.inc.php" method="post">
-        <lable>email</lable>>
-        <input type="text" name="email" maxlength="40">
-        <br>
-        <input type="submit" value="Register">
-    </form>
+    <?php
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
+        $from = "test@test.com";
+        $to = "olliver.b13@gmail.com";
+        $subject = "Checking PHP mail";
+        $message = "PHP mail works just fine";
+        $headers = "From:" . $from;
+        mail($to,$subject,$message, $headers);
+        echo "The email message was sent.";
+    ?>
 
     <div class="content-wrap">
       <div class="header-outer-wrap">

@@ -43,7 +43,7 @@ $DeepRed_Dark : #9e0606;
   -ms-text-underline-position: below;
   text-underline-position: under;
   text-decoration: underline !important;
-  text-decoration-color: $Accent !important;
+  text-decoration-color: $PrimText !important;
 }
 
 @mixin buttonMix() {

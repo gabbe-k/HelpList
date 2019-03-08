@@ -113,7 +113,7 @@
      </div>
      <div class="remove-tags-wrap">
       <?php
-       if (isset($_SESSION['isTeachr'])) {
+       if (isset($_SESSION['isTeachr']) && $_SESSION['isTeachr'] == 1) {
          ?>
           <button type="button" name="button" id="remove-tags-button">Remove</button>
          <?php

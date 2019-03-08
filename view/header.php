@@ -41,6 +41,13 @@
           <input id="logout-button" type="submit" name="logout-submit" value="Logout">
         </form>
       </div>
+      <div class="logout-current-user">
+        <p>
+          <?php
+            echo "Logged in as: " . $_SESSION['userUid'];
+           ?>
+        </p>
+      </div>
     </div>
     <?php
       }

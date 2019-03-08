@@ -23,8 +23,7 @@
     }
 
     .header-logout-wrap {
-
-      
+      height: 6.5rem;
 
       input[type=submit] {
         margin: 0;
@@ -41,9 +40,19 @@
       }
     }
 
+    .logout-current-user {
+
+      text-align: center;
+
+      p {
+        padding-top: .25rem;
+      }
+
+    }
+
     .header-login-wrap {
       padding: .25rem .25rem 0 .45rem;
-
+      height: 6.25rem;
       grid-column: 4;
       display: grid;
       grid-template-columns: 1fr;

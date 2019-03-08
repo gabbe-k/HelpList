@@ -1,7 +1,6 @@
 <?php
 	session_start();
   include("../../Inc/dbh.inc.php");
-  include("../../Inc/dupesearch.inc.php");
 
   $currentClass = $_POST['classId'];
 

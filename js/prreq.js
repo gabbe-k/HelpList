@@ -1,43 +1,48 @@
 
-   function expandText() {
-      $(".request-text-wrap").addClass("fullSize");
-   }
+function expandText() {
+  var elements = $(".request-text-wrap").get();
 
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+  $(elements).each(function(index, element) {
 
-   $(function () {
+      if ($(element).prev().prev().is(".request-checkmark-userpost")) {
+      }
+      else {
+        $(element).addClass("fullSize");
+      }
 
-     var classId = getParameterByName("class");
+  });
 
-     $('#request-form').on('submit', function (e) {
 
-       e.preventDefault();
+}
 
-       $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-          console.log("hhh");
-          update();
+$(function () {
 
-       });
+  var classId = getParameterByName("class");
 
-       /*$.ajax({
-         type: 'post',
-         url: '../php/func/post.php',
-         data: $('#request-form').serialize(), classId,
-         success: function () {
-           console.log("form submitted");
-           update();
-         }
-       }); */
+  $('#request-form').on('submit', function (e) {
 
-     });
+    e.preventDefault();
+
+    $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
+
+       update();
+
+    });
+
+   $.post("../php/func/sessionsetter.php",  {numPost: "1"}, function(data) {
 
    });
+
+  });
+
+});

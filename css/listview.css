@@ -73,6 +73,7 @@ p {
 }
 .listview-wrap .request-wrap p {
   margin-left: 0.25rem;
+  text-align: center;
 }
 .listview-wrap .request-wrap .hidden-form {
   display: none;
@@ -89,7 +90,7 @@ p {
   grid-column-gap: 0.25rem;
   color: #EDEDED;
 }
-.listview-wrap .request-wrap .request div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap) {
+.listview-wrap .request-wrap .request div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap):not(.request-checkmark-userpost) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -130,6 +131,23 @@ p {
   background-position: center;
   filter: invert(1);
 }
+.listview-wrap .request-wrap .request .request-checkmark:hover {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+.listview-wrap .request-wrap .request .request-checkmark-userpost {
+  background-image: url("../img/round-indeterminate_check_box-24px.svg");
+  width: 2rem;
+  height: 2rem;
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(1);
+}
+.listview-wrap .request-wrap .request .request-checkmark-userpost:hover {
+  cursor: pointer;
+  filter: invert(0.8);
+}
 .listview-wrap .request-wrap .request .isChecked {
   background-image: url("../img/round-check_box-24px.svg") !important;
 }
@@ -159,6 +177,18 @@ p {
   width: 100%;
   height: 100%;
   grid-column: 1/8;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap .tmpMessage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  margin-left: 0.15rem;
+}
+.listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap .tmpMessage p {
+  text-align: left;
+  font-size: 0.65rem;
 }
 .listview-wrap .request-wrap .request-formsection-outer-wrap .request-form-wrap #request-form {
   width: 100%;

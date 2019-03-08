@@ -52,7 +52,6 @@
        </form>
      </div>
      <div class="remove-tags-wrap">
-       <button type="button" name="button" id="remove-tags-button">Remove</button>
      </div>
  </div>
 <?php

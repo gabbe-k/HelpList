@@ -11,8 +11,8 @@
 			return;
 		}
 		else {
-			include("../../Inc.sendmail.inc.php");
-			alert("Your class code has been sent to your registerd email.");
+			//include("../../Inc.sendmail.inc.php");
+			//alert("Your class code has been sent to your registerd email.");
 			$id = $_SESSION['userId'];
 			$stmt = $conn->prepare("INSERT INTO classrooms (teacherId,className) VALUES (?,?)");
 			$stmt->bind_param('ss', $id, $className);

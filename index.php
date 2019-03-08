@@ -12,7 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed1b83d6a1e88e54d9aa1cdbbc6e5aa2e6b6f833
     <div class="content-wrap">
       <div class="header-outer-wrap">
         <?php include("view/header.php"); ?>

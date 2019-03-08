@@ -72,17 +72,32 @@ $(document).ready(function() {
 
       if ($(event.target).is('#remove-tags-button') && checkedElementArr.length > 0) {
 
-        /*jQuery.each(listElement, function(index, item) {
-            console.log(item);
-            $(item).fadeOut();
-        }); */
-
         $.post("../php/print/prremovepost.php",  {postIdArr: checkedElementArr}, function(output) {
 
           console.log(output);
           update();
 
         });
+
+      }
+
+      if ($(event.target).is('.request-checkmark-userpost')) {
+
+        var tmpArr = [];
+
+        var userPostId = $(event.target).parent().next().children().val();
+
+        tmpArr.push(userPostId);
+
+        $.post("../php/print/prremovepost.php",  {postIdArr: tmpArr}, function(output) {
+
+          update();
+
+        });
+
+       $.post("../php/func/sessionsetter.php",  {numPost: "0"}, function(data) {
+
+       });
 
       }
 

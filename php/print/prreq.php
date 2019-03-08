@@ -9,7 +9,7 @@
 
   if (isset($_POST['classId'])) {
 
-      $stmt = $conn->prepare("SELECT users.uid, requests.reqText, requests.postId
+      $stmt = $conn->prepare("SELECT users.uid, users.id, requests.reqText, requests.postId
       FROM users, requests
       WHERE users.id = requests.id
       AND requests.classId = (?)
@@ -20,9 +20,16 @@
       $res = $stmt->get_result();
 
 
+
+      $stmtUsr = $conn->prepare("SELECT id
+      FROM users WHERE id = (?)");
+      $stmtUsr->bind_param("s", $_SESSION['userId']);
+      $stmtUsr->execute();
+      $resUsr = $stmtUsr->get_result();
+      $rowUid = $resUsr->fetch_assoc();
+
       $stmtTeach = $conn->prepare("SELECT teacherId
       FROM classrooms WHERE classId = (?)");
-
       $stmtTeach->bind_param("s", $currentClass);
       $stmtTeach->execute();
       $resTeach = $stmtTeach->get_result();
@@ -42,21 +49,27 @@
           $row = $res->fetch_assoc();
           ?>
           <div class="request">
-         <?php
-          if (isset($_SESSION['isTeachr']) &&  $_SESSION['isTeachr'] == 1 && $rowId['teacherId'] == $_SESSION['userId']) {
-          ?>
-            <div class="request-checkmark">
-            </div>
           <?php
-          }
-          else {
+          if ($rowUid['id'] == $row['id']) {
            ?>
-           <script type="text/javascript">
-             expandText();
-           </script>
+            <div class="request-checkmark-userpost">
+            </div>
            <?php
            }
+           else if (isset($_SESSION['isTeachr']) &&  $_SESSION['isTeachr'] == 1 && $rowId['teacherId'] == $_SESSION['userId']) {
            ?>
+             <div class="request-checkmark">
+             </div>
+           <?php
+           }
+           else {
+            ?>
+            <script type="text/javascript">
+              expandText();
+            </script>
+            <?php
+            }
+            ?>
             <div class="request-username-wrap">
               <p><?php echo $row['uid'] ?></p>
             </div>
@@ -82,7 +95,7 @@
  <div class="request-formsection-outer-wrap">
      <div class="request-form-wrap">
        <?php
-        if (!isset($_SESSION['numPost'])) {
+        if (!isset($_SESSION['numPost']) || $_SESSION['numPost'] == 0) {
         ?>
        <form id="request-form" action="./php/func/post.php" method="post" autocomplete="off">
          <input type="text" name="reqText" placeholder="Input your help request here...">
@@ -91,9 +104,20 @@
        </form>
        <?php
          }
+         else {
+           echo "<div class='tmpMessage'>";
+           echo "<p>Remove your current request to post again</p>";
+           echo "</div>";
+         }
         ?>
      </div>
      <div class="remove-tags-wrap">
-       <button type="button" name="button" id="remove-tags-button">Remove</button>
+      <?php
+       if (isset($_SESSION['isTeachr'])) {
+         ?>
+          <button type="button" name="button" id="remove-tags-button">Remove</button>
+         <?php
+       }
+       ?>
      </div>
  </div>

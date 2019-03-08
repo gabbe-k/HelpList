@@ -55,6 +55,7 @@
 
       p {
         margin-left: .25rem;
+        text-align: center;
       }
 
       .hidden-form {
@@ -75,7 +76,7 @@
         grid-column-gap: .25rem;
         color: $Text;
 
-        div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap) {
+        div:not(.request-checkmark):not(.request-classroom-wrap):not(.request-classroom-inner-wrap):not(.request-checkmark-userpost) {
           display: flex;
           justify-content: flex-start;
           align-items: center;
@@ -123,6 +124,26 @@
           background-repeat: no-repeat;
           background-position: center;
           filter: invert(1);
+
+          &:hover {
+            cursor: pointer;
+            filter: invert(.8);
+          }
+        }
+
+        .request-checkmark-userpost {
+          background-image: url("../img/round-indeterminate_check_box-24px.svg");
+          width: 2rem;
+          height: 2rem;
+          background-size: 85%;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: invert(1);
+
+          &:hover {
+            cursor: pointer;
+            filter: invert(.8);
+          }
         }
 
         .isChecked {
@@ -160,6 +181,20 @@
           width: 100%;
           height: 100%;
           grid-column: 1/8;
+
+          .tmpMessage {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            margin-left: .15rem;
+
+            p {
+              text-align: left;
+              font-size: .65rem;
+            }
+          }
 
           #request-form {
             width: 100%;

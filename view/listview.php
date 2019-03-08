@@ -1,4 +1,5 @@
 <script src="../js/listview.js"></script>
+<script src="../js/setsession.js"></script>
 
 <div class="listview-wrap">
 

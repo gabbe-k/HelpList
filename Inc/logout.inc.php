@@ -1,5 +1,16 @@
 <?php
 session_start();
+
+// Include configuration file
+require_once 'gauth.inc.php';
+
+// Remove token and user data from the session
+unset($_SESSION['token']);
+unset($_SESSION['userData']);
+
+// Reset OAuth access token
+$gClient->revokeToken();
+
 $_SESSION = [];
 // Deletes session cookie and destroys the session (not just the session data)
 if (ini_get("session.use_cookies")) {
@@ -14,6 +25,7 @@ if (ini_get("session.use_cookies")) {
         $params["httponly"]
     );
 }
+
 session_destroy();
 header("Location: ../index.php");
 ?>

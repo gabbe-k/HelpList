@@ -13,44 +13,11 @@
   </div>
   <div class="header-login-wrap">
 
-    <?php
-      if (!isset($_SESSION['userUid'])){
-     ?>
-     <div class="header-login-title">
-       <h4>Login</h4>
-     </div>
+    <!-- Display Google sign-in button -->
+    <div id="gSignIn"></div>
 
-     <div class="header-login-form">
-       <form class="" action="../Inc/login.inc.php" method="post">
-         <input type="text" name="mailuid" placeholder="Username/Email">
-         <input type="password" name="pwd" placeholder="Password">
-         <input type="submit" name="login-submit" value="Submit">
-       </form>
-     </div>
-     <div class="header-login-signup">
-       <a href="../index.php?page=signup">No account?</a>
-     </div>
-
-    <?php
-      }
-      else {
-        ?>
-    <div class="header-logout-wrap">
-      <div class="logout-wrap">
-        <form id="logout-form" action="Inc/logout.inc.php" method="post">
-          <input id="logout-button" type="submit" name="logout-submit" value="Logout">
-        </form>
-      </div>
-      <div class="logout-current-user">
-        <p>
-          <?php
-            echo "Logged in as: " . $_SESSION['userUid'];
-           ?>
-        </p>
-      </div>
-    </div>
-    <?php
-      }
-     ?>
+    <!-- Show the user profile details -->
+    <div class="userContent" style="display: none;"></div>
+    
   </div>
 </div>

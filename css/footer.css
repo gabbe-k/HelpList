@@ -30,6 +30,7 @@ p {
 .footer-outer-wrap {
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
+  height: 6.25rem;
 }
 
 /*# sourceMappingURL=footer.css.map */

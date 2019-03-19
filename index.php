@@ -10,6 +10,7 @@
     <title>Index</title>
     <link rel="stylesheet" href="../css/master.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/gauth.js"></script>
     <meta name="google-signin-client_id" content="683186740086-ho1f10f193qljvcmfnfek3upepe6066s.apps.googleusercontent.com">
   </head>
   <body>

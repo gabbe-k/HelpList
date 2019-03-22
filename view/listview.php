@@ -11,7 +11,7 @@
 
   </div>
   <?php
-    if (isset($_SESSION['userUid'])){
+    if (isset($_SESSION['idToken'])){
    ?>
 
   <div class="request-wrap">

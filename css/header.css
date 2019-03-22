@@ -31,7 +31,6 @@ p {
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   z-index: 999;
-  height: 6.5rem;
 }
 .header-outer-wrap .header-inner-wrap {
   height: 100%;
@@ -47,10 +46,10 @@ p {
   justify-content: center;
   align-items: center;
 }
-.header-outer-wrap .header-inner-wrap .header-logout-wrap {
-  height: 6.5rem;
+.header-outer-wrap .header-inner-wrap .header-logout-wrap #signout-form {
+  display: none;
 }
-.header-outer-wrap .header-inner-wrap .header-logout-wrap input[type=submit] {
+.header-outer-wrap .header-inner-wrap .header-logout-wrap input[type=button] {
   margin: 0;
   padding: 0;
   width: 100%;

@@ -50,7 +50,7 @@
           ?>
           <div class="request">
           <?php
-          if ($rowUid['id'] == $row['id']) {
+          if ($_SESSION['idToken'] == $row['id']) {
            ?>
             <div class="request-checkmark-userpost">
             </div>

@@ -31,8 +31,9 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE requests(
-	id int(10),
+	id text,
 	postId int NOT NULL AUTO_INCREMENT,
+		userUid text,
     reqText text,
     classId int(10),
 		PRIMARY KEY (postId)

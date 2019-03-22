@@ -14,11 +14,11 @@
 			return;
 		}
 		else {
-			$id = $_SESSION['userId'];
+			$id = $_SESSION['idToken'];
 			$uid = $_SESSION['userUid'];
 
-			$stmt = $conn->prepare("INSERT INTO requests (id,reqText,classId) VALUES (?,?,?)");
-			$stmt->bind_param('sss', $id, $reqText, $currentClass);
+			$stmt = $conn->prepare("INSERT INTO requests (id,userUid,reqText,classId) VALUES (?,?,?)");
+			$stmt->bind_param('ssss', $id, $uid, $reqText, $currentClass);
 			$stmt->execute();
 			exit;
 		}

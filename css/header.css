@@ -31,14 +31,16 @@ p {
   background: #303F9F;
   box-shadow: 0 0.15rem 0 0rem rgba(0, 0, 0, 0.25);
   z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header-outer-wrap .header-inner-wrap {
-  height: 100%;
   width: 100%;
   color: white;
   font-weight: 200;
   display: grid;
-  grid-template-columns: 0.3fr 1fr 1fr 0.3fr;
+  grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
 }
 .header-outer-wrap .header-inner-wrap .header-title {
   grid-column: 2/4;
@@ -69,16 +71,10 @@ p {
   padding-top: 0.25rem;
 }
 .header-outer-wrap .header-inner-wrap .header-login-wrap {
-  padding: 0.25rem 0.25rem 0 0.45rem;
-  height: 6.25rem;
   grid-column: 4;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.79fr 0.1fr;
-  background: #212121;
-}
-.header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-title h4 {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header-outer-wrap .header-inner-wrap .header-login-wrap .header-login-signup {
   margin-top: 0.25rem;

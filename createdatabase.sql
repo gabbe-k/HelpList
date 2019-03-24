@@ -33,7 +33,7 @@ CREATE TABLE `users` (
 CREATE TABLE requests(
 	id text,
 	postId int NOT NULL AUTO_INCREMENT,
-		userUid text,
+		uId text,
     reqText text,
     classId int(10),
 		PRIMARY KEY (postId)

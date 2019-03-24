@@ -15,9 +15,9 @@
 		}
 		else {
 			$id = $_SESSION['idToken'];
-			$uid = $_SESSION['userUid'];
+			$uid = $_SESSION['uId'];
 
-			$stmt = $conn->prepare("INSERT INTO requests (id,userUid,reqText,classId) VALUES (?,?,?)");
+			$stmt = $conn->prepare("INSERT INTO requests (id,uId,reqText,classId) VALUES (?,?,?,?)");
 			$stmt->bind_param('ssss', $id, $uid, $reqText, $currentClass);
 			$stmt->execute();
 			exit;

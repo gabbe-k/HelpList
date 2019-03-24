@@ -1,7 +1,8 @@
+
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     $(".g-signin2").fadeOut(0);
-    $("#signout-form").fadeIn(200);
+    $("#signout-form").fadeIn(0);
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
     console.log('Full Name: ' + profile.getName());
@@ -18,21 +19,31 @@ function onSignIn(googleUser) {
         console.log(data);
     });
 
-    $.post("./php/func/sessionsetter.php",  {value: profile.getName(), param: "userUid"}, function(data) {
+    $.post("./php/func/sessionsetter.php",  {value: profile.getName(), param: "uId"}, function(data) {
         console.log(data);
     });
 
 }
 
 function signOut() {
-    //unset sessions!!
+
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         console.log('User signed out.');
     });
-    $(".g-signin2").fadeIn(200);
+    $(".g-signin2").fadeIn(0);
     $("#signout-form").fadeOut(0);
     $.post("./php/func/sessionunsetter.php", {});
+
+    $.ajax({
+        url: '../php/print/prclass.php',
+        success:
+        function(data){
+        $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
+    
+        },
+      });
+
 }
 
 function saveUserData(userData){

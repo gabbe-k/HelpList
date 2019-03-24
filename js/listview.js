@@ -95,7 +95,7 @@ $(document).ready(function() {
 
         });
 
-       $.post("../php/func/sessionsetter.php",  {numPost: "0"}, function(data) {
+       $.post("../php/func/sessionsetter.php",  {param: "numPost", value: "0"}, function(data) {
 
        });
 

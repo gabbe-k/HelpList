@@ -9,11 +9,9 @@
 
   if (isset($_POST['classId'])) {
 
-      $stmt = $conn->prepare("SELECT users.uid, users.id, requests.reqText, requests.postId
-      FROM users, requests
-      WHERE users.id = requests.id
-      AND requests.classId = (?)
-      ORDER BY requests.postId ASC");
+      $stmt = $conn->prepare("SELECT uId, id, reqText, postId
+      FROM requests  WHERE classId = (?)
+      ORDER BY postId ASC");
 
       $stmt->bind_param("s", $currentClass);
       $stmt->execute();
@@ -21,12 +19,12 @@
 
 
 
-      $stmtUsr = $conn->prepare("SELECT id
+      /*$stmtUsr = $conn->prepare("SELECT id
       FROM users WHERE id = (?)");
       $stmtUsr->bind_param("s", $_SESSION['userId']);
       $stmtUsr->execute();
       $resUsr = $stmtUsr->get_result();
-      $rowUid = $resUsr->fetch_assoc();
+      $rowUid = $resUsr->fetch_assoc(); */
 
       $stmtTeach = $conn->prepare("SELECT teacherId
       FROM classrooms WHERE classId = (?)");
@@ -71,7 +69,7 @@
             }
             ?>
             <div class="request-username-wrap">
-              <p><?php echo $row['uid'] ?></p>
+              <p><?php echo $row['uId'] ?></p>
             </div>
             <div class="request-text-wrap">
               <p><?php echo $row['reqText']; ?></p>

@@ -39,7 +39,7 @@ $(function () {
 
     });
 
-   $.post("../php/func/sessionsetter.php",  {numPost: "1"}, function(data) {
+   $.post("../php/func/sessionsetter.php",  {param: "numPost", value: "1"}, function(data) {
 
    });
 

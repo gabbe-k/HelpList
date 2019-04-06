@@ -1,4 +1,3 @@
-<script src="../../js/prclass.js"></script>
 
 <?php
   include("../../Inc/dbh.inc.php");

@@ -48,8 +48,38 @@ p {
   justify-content: center;
   align-items: center;
 }
+.header-outer-wrap .header-inner-wrap .header-logout-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .header-outer-wrap .header-inner-wrap .header-logout-wrap #signout-form {
   display: none;
+  height: 100%;
+  width: 100%;
+}
+.header-outer-wrap .header-inner-wrap .header-logout-wrap #signout-form button {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: margin-top 0.05s ease-out;
+  transition: 0.075s 0.05s ease-out;
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0.2);
+  padding: 0.6rem;
+  background: none;
+  color: white;
+  box-shadow: none;
+  font-size: 0.75rem;
+}
+.header-outer-wrap .header-inner-wrap .header-logout-wrap #signout-form button:focus {
+  border: none;
+  outline: none;
+}
+.header-outer-wrap .header-inner-wrap .header-logout-wrap #signout-form button:active {
+  box-shadow: 0 0.25rem 0 -0.1rem rgba(0, 0, 0, 0);
 }
 .header-outer-wrap .header-inner-wrap .header-logout-wrap input[type=button] {
   margin: 0;

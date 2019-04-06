@@ -156,6 +156,9 @@ p {
   background: #212121;
   font-weight: lighter;
 }
+.listview-wrap .request-wrap .request .request-username-wrap p {
+  font-size: 0.6rem;
+}
 .listview-wrap .request-wrap .request .fullSize {
   grid-column: 2/4;
 }

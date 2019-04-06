@@ -14,18 +14,29 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
 
-
     $.post("./php/func/sessionsetter.php",  {value: id_token, param: "idToken"}, function(data) {
-        console.log(data);
     });
 
     $.post("./php/func/sessionsetter.php",  {value: profile.getName(), param: "uId"}, function(data) {
-        console.log(data);
     });
 
 }
 
 function signOut() {
+
+    var id_token;
+
+    /*$.post("./php/func/sessiongetter.php",  {param: "idToken"}, function(data) {
+
+      id_token = data;
+    }); */
+
+    $.post("./php/auth/signout.php",  {param: "idToken", value: id_token}, function(data) {
+
+    });
+
+    $.post("../php/auth/signout.php",  {value: id_token, param: "idToken"}, function(data) {
+    });
 
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
@@ -34,15 +45,6 @@ function signOut() {
     $(".g-signin2").fadeIn(0);
     $("#signout-form").fadeOut(0);
     $.post("./php/func/sessionunsetter.php", {});
-
-    $.ajax({
-        url: '../php/print/prclass.php',
-        success:
-        function(data){
-        $('.request-wrap').hide().html(data).fadeIn(200); //insert text of test.php into your div
-    
-        },
-      });
 
 }
 

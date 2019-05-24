@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+  update();
+});
+
 function update() {
 
   $.ajax({
@@ -10,9 +14,3 @@ function update() {
   });
 
 }
-
-$(document).ready(function() {
-
-  update();
-
-});

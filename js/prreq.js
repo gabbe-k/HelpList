@@ -29,20 +29,27 @@ $(function () {
 
   var classId = getParameterByName("class");
 
-  $('#request-form').on('submit', function (e) {
+    $('#request-form').on('submit', function (e) {
 
-    e.preventDefault();
+      e.preventDefault();
 
-    $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
+      if ($('#request-form').children().val().length > 0) {
+    
+        $.post("../php/func/post.php",  {classId: classId, reqText: $('#request-form').children().val()}, function(data) {
 
-       update();
+          update();
+    
+        });
+    
+        $.post("../php/func/sessionsetter.php",  {param: "numPost", value: "1"}, function(data) {
+    
+        });
 
+      }
+      else {
+        alert("write somethin");
+      } 
+  
     });
-
-   $.post("../php/func/sessionsetter.php",  {param: "numPost", value: "1"}, function(data) {
-
-   });
-
-  });
 
 });

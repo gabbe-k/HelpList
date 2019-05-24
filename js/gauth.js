@@ -11,6 +11,16 @@ function onSignIn(googleUser) {
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
+    var email = profile.getEmail();
+    var patt = new RegExp("@ga.lbs.se");
+    var res = patt.test(email);
+
+    if (res == true) {
+        console.log("Teacher mode");
+        $.post("./php/func/sessionsetter.php",  {value: 1, param: "isTeachr"}, function(data) {
+        });
+    }
+
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
 
@@ -26,13 +36,7 @@ function signOut() {
 
     var id_token;
 
-    /*$.post("./php/func/sessiongetter.php",  {param: "idToken"}, function(data) {
-
-      id_token = data;
-    }); */
-
     $.post("./php/auth/signout.php",  {param: "idToken", value: id_token}, function(data) {
-
     });
 
     $.post("../php/auth/signout.php",  {value: id_token, param: "idToken"}, function(data) {

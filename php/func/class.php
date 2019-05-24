@@ -13,9 +13,10 @@
 		else {
 			//include("../../Inc.sendmail.inc.php");
 			//alert("Your class code has been sent to your registerd email.");
-			$id = $_SESSION['userId'];
-			$stmt = $conn->prepare("INSERT INTO classrooms (teacherId,className) VALUES (?,?)");
-			$stmt->bind_param('ss', $id, $className);
+			$uId = $_SESSION['uId'];
+			$id = $_SESSION['idToken'];
+			$stmt = $conn->prepare("INSERT INTO classrooms (teacherName,teacherId,className) VALUES (?,?,?)");
+			$stmt->bind_param('sss', $uId, $id, $className);
 			$stmt->execute();
 			exit;
 		}

@@ -17,16 +17,7 @@
       $stmt->execute();
       $res = $stmt->get_result();
 
-
-
-      /*$stmtUsr = $conn->prepare("SELECT id
-      FROM users WHERE id = (?)");
-      $stmtUsr->bind_param("s", $_SESSION['userId']);
-      $stmtUsr->execute();
-      $resUsr = $stmtUsr->get_result();
-      $rowUid = $resUsr->fetch_assoc(); */
-
-      $stmtTeach = $conn->prepare("SELECT teacherId
+      $stmtTeach = $conn->prepare("SELECT teacherName
       FROM classrooms WHERE classId = (?)");
       $stmtTeach->bind_param("s", $currentClass);
       $stmtTeach->execute();
@@ -54,7 +45,7 @@
             </div>
            <?php
            }
-           else if (isset($_SESSION['isTeachr']) &&  $_SESSION['isTeachr'] == 1 && $rowId['teacherId'] == $_SESSION['userId']) {
+           else if ($rowId['teacherName'] == $_SESSION['uId']) {
            ?>
              <div class="request-checkmark">
              </div>
@@ -97,7 +88,7 @@
         ?>
        <form id="request-form" action="./php/func/post.php" method="post" autocomplete="off">
          <input type="text" name="reqText" placeholder="Input your help request here...">
-         <input type="submit" name="" value="Submit">
+         <input id="submit-button" type="submit" name="" value="Submit">
          <input type="hidden" name="numPost" value="1">
        </form>
        <?php

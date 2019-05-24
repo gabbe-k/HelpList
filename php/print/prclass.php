@@ -3,9 +3,8 @@
   include("../../Inc/dbh.inc.php");
   session_start();
 
-  $stmt = $conn->prepare("SELECT classrooms.className, classrooms.classId, users.uid
-  FROM users, classrooms
-  WHERE classrooms.teacherId = users.id
+  $stmt = $conn->prepare("SELECT classrooms.teacherName, classrooms.className, classrooms.classId
+  FROM classrooms
   ORDER BY classrooms.classId ASC");
 
   $stmt->execute();
@@ -28,7 +27,7 @@
       <div class="request">
         <div class="request-classroom-wrap">
           <div class="request-classroom-inner-wrap">
-            <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>&teacherName=<?php echo $row['uid']; ?>"><?php echo $row['className']; ?></a>
+            <a href="../index.php?page=listview&class=<?php echo $row['classId']; ?>&teacherName=<?php echo $row['teacherName']; ?>"><?php echo $row['className']; ?></a>
           </div>
         </div>
       </div>
@@ -57,7 +56,7 @@
   }
   else {
     ?>
-         <p>Sign in as a teacher to add classes</p>
+      <p>Sign in as a teacher to add classes</p>
     <?php
   }
  ?>

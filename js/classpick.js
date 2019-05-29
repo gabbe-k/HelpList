@@ -1,6 +1,3 @@
-$( document ).ready(function() {
-  update();
-});
 
 function update() {
 
@@ -14,3 +11,21 @@ function update() {
   });
 
 }
+
+$(function () {
+
+  var id;
+
+  console.log("running");
+
+  $.post("./php/func/sessiongetter.php",  {param: "idToken"}, function(data) {
+
+    id = data;
+
+  });
+
+  if (id != null) {
+    console.log("not NULL");
+  }
+
+});

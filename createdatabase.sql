@@ -5,12 +5,12 @@ DROP DATABASE helplist;
 CREATE DATABASE helplist;
 
 CREATE TABLE users(
-		id int NOT NULL AUTO_INCREMENT,
-    email varchar(10),
-    uid text,
-    pwd text,
-    isTeachr bit,
-		PRIMARY KEY (id)
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(100),
+    email varchar(100),
+    gid varchar(100),
+    isTeachr int,
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE requests(

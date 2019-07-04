@@ -21,6 +21,8 @@
 			$stmt->bind_param('ssss', $id, $uid, $reqText, $currentClass);
 			$stmt->execute();
 			exit;
+
+			
 		}
 
 	}

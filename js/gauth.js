@@ -11,20 +11,34 @@ function onSignIn(googleUser) {
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
+    //CHECK IF TEACHER
     var email = profile.getEmail();
     var patt = new RegExp("@ga.lbs.se");
     var res = patt.test(email);
 
-    if (res == true) {
+    if (res) {
         console.log("Teacher mode");
-        $.post("./php/func/sessionsetter.php",  {value: 1, param: "isTeachr"}, function(data) {
+        $.post("./php/func/sessionsetter.php", { value: 1, param: "isTeachr" }, function (data) {
         });
     }
 
-    // The ID token you need to pass to your backend:
-    var id_token = googleUser.getAuthResponse().id_token;
+    //PUT PROFILE IN DATABASE
+    if(profile) {
 
-    $.post("./php/func/sessionsetter.php",  {value: id_token, param: "idToken"}, function(data) {
+        var id = profile.getId();
+
+        $.post('../php/auth/savedata.php', {
+            id: id, name: profile.getName(), email: profile.getEmail(), isteacher: false
+        }).done(function (data) {
+            console.log(data);
+        });
+
+    }  
+
+
+
+
+    $.post("./php/func/sessionsetter.php",  {value: id, param: "gid"}, function(data) {
     });
 
     $.post("./php/func/sessionsetter.php",  {value: profile.getName(), param: "uId"}, function(data) {

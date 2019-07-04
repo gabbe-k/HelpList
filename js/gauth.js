@@ -37,8 +37,10 @@ function onSignIn(googleUser) {
 
 
 
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
 
-    $.post("./php/func/sessionsetter.php",  {value: id, param: "gid"}, function(data) {
+    $.post("./php/func/sessionsetter.php",  {value: id_token, param: "idToken"}, function(data) {
     });
 
     $.post("./php/func/sessionsetter.php",  {value: profile.getName(), param: "uId"}, function(data) {

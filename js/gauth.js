@@ -1,9 +1,8 @@
 
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
-    $(".g-signin2").Hidden;
-    $("#signout-form").Visible;
-
+    $(".g-signin2").fadeOut(0);
+    $("#signout-form").fadeIn(0);
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
     console.log('Full Name: ' + profile.getName());
@@ -65,4 +64,8 @@ function signOut() {
     $("#signout-form").fadeOut(0);
     $.post("./php/func/sessionunsetter.php", {});
 
+}
+
+function saveUserData(userData){
+    $.post('userData.php', { oauth_provider:'google', userData: JSON.stringify(userData) });
 }
